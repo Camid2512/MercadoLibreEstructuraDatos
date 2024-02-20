@@ -1,7 +1,9 @@
 package co.edu.unbosque.util.linkedlist;
 
-public class MyLinkedList<E> {
+import java.io.Serializable;
 
+public class MyLinkedList<E> implements Serializable {
+	private static final long serialVersionUID = 8952084267757202536L;
 	protected Node<E> first;
 
 	public MyLinkedList() {
@@ -17,79 +19,60 @@ public class MyLinkedList<E> {
 	}
 
 	public boolean isEmpty() {
-
 		return (this.first == null);
 	}
 
 	public void add(E info) {
-
-		Node<E> newNode = new Node<>(info);
+		Node<E> newNode = new Node<E>(info);
 		newNode.setNext(this.first);
 		this.first = newNode;
 	}
 
 	public void insert(E info, Node<E> previous) {
-
 		if (previous != null) {
-
-			Node<E> newNode = new Node<>(info);
-			newNode.setNext(previous.getNext());
+			Node<E> newNode = new Node<E>(info);
+			newNode.equals(previous.getNext());
 			previous.setNext(newNode);
-
 		}
 	}
 
 	public void addLast(E info) {
-
 		Node<E> lastNode = getLastNode();
-
 		if (lastNode != null) {
 			insert(info, lastNode);
 		} else {
-			this.first = new Node<>(info);
+			this.first = new Node<E>(info);
 		}
-
 	}
 
 	public E extract() {
-
 		E data = null;
-
 		if (this.first != null) {
-
 			data = this.first.getInfo();
-			this.first = first.getNext();
-
+			this.first = this.first.getNext();
 		}
 		return data;
 	}
 
 	public E extract(Node<E> previous) {
-
 		E data = null;
-
 		if (previous != null && previous.getNext() != null) {
-
 			data = previous.getNext().getInfo();
 			previous.setNext(previous.getNext().getNext());
-
 		}
 		return data;
-
 	}
 
 	public int size() {
+		return sizeRecursive(this.first);
+	}
 
-		int size = 0;
-
-		Node<E> current = this.first;
-
-		while (current != null) {
-			size++;
-			current = current.getNext();
+	private int sizeRecursive(Node<E> current) {
+		if (current == null) {
+			return 0;
+		} else {
+			return 1 + sizeRecursive(current.getNext());
 		}
-		return size;
-
 	}
 
 	public String print() {
@@ -97,104 +80,74 @@ public class MyLinkedList<E> {
 	}
 
 	public Node<E> get(E info) {
-
-		Node<E> targetNode = null;
-		Node<E> currentNode = this.first;
-
-		while (currentNode != null && !currentNode.getInfo().equals(info)) {
-
-			currentNode = currentNode.getNext();
-
-		}
-		if (currentNode != null) {
-			targetNode = currentNode;
-		}
-		return targetNode;
-
+		return getRecursive(this.first, info);
 	}
 
-	public Node<E> get(int index) {
-
-		Node<E> targetNode = null;
-		Node<E> currentNode = this.first;
-
-		int counter = 0;
-
-		while (currentNode != null && counter < index) {
-
-			currentNode = currentNode.getNext();
-			counter++;
-
+	private Node<E> getRecursive(Node<E> current, E info) {
+		if (current == null || current.getInfo().equals(info)) {
+			return current;
+		} else {
+			return getRecursive(current.getNext(), info);
 		}
+	}
 
-		if (currentNode != null) {
+	public Node<E> get(int pos) {
+		return getRecursive(this.first, pos, 0);
+	}
 
-			targetNode = currentNode;
-
+	private Node<E> getRecursive(Node<E> current, int pos, int counter) {
+		if (current == null || counter >= pos) {
+			return current;
+		} else {
+			return getRecursive(current.getNext(), pos, counter + 1);
 		}
-		return targetNode;
-
 	}
 
 	public Node<E> getLastNode() {
+		return getLastNodeRecursive(this.first);
+	}
 
-		Node<E> currentNode = this.first;
-
-		while (currentNode != null && currentNode.getNext() != null) {
-
-			currentNode = currentNode.getNext();
-
+	private Node<E> getLastNodeRecursive(Node<E> current) {
+		if (current == null || current.getNext() == null) {
+			return current;
+		} else {
+			return getLastNodeRecursive(current.getNext());
 		}
-
-		return currentNode;
-
 	}
 
 	public int indexOf(E info) {
-
-		Node<E> currentNode = this.first;
-
-		int infoPosition = -1;
-
-		if (!isEmpty()) {
-
-			infoPosition = 0;
-			while (currentNode != null && !currentNode.getInfo().equals(info)) {
-
-				infoPosition++;
-				currentNode = currentNode.getNext();
-
-			}
-
-		}
-		return infoPosition;
+		return indexOfRecursive(this.first, info, 0);
 	}
 
-	public int numberOfOcurrences(E info) {
-
-		int cont = 0;
-		Node<E> currentNode = this.first;
-
-		while (currentNode != null) {
-
-			if (currentNode.getInfo().equals(info)) {
-				cont++;
-			}
-			currentNode = currentNode.getNext();
-
+	private int indexOfRecursive(Node<E> current, E info, int index) {
+		if (current == null) {
+			return -1;
+		} else if (current.getInfo().equals(info)) {
+			return index;
+		} else {
+			return indexOfRecursive(current.getNext(), info, index + 1);
 		}
+	}
 
-		return cont;
+	public int numberOfOccurrences(E info) {
+		return numberOfOccurrencesRecursive(this.first, info, 0);
+	}
 
+	private int numberOfOccurrencesRecursive(Node<E> current, E info, int count) {
+		if (current == null) {
+			return count;
+		} else {
+			if (current.getInfo().equals(info)) {
+				count++;
+			}
+			return numberOfOccurrencesRecursive(current.getNext(), info, count);
+		}
 	}
 
 	public E extractLast() {
-
 		E info = null;
 		Node<E> currentNode = this.first;
-
 		int listSize = size();
-
 		if (!isEmpty()) {
 			if (listSize == 1) {
 				info = currentNode.getInfo();
@@ -205,50 +158,44 @@ public class MyLinkedList<E> {
 			}
 		}
 		return info;
-
 	}
 
 	public String print(int pos) {
-
 		StringBuilder sb = new StringBuilder();
-		int cont = 0;
-		Node<E> currentNode = this.first;
+		printRecursive(this.first, pos, 0, sb);
+		return sb.toString();
+	}
 
-		if (!isEmpty()) {
-			while (currentNode != null && cont < pos) {
-				currentNode = currentNode.getNext();
-				cont++;
-			}
-			while (currentNode != null) {
-				sb.append(currentNode.getInfo().toString());
-				if (currentNode.getNext() != null) {
-					sb.append(" -> ");
-				}
-				currentNode = currentNode.getNext();
-			}
+	private void printRecursive(Node<E> current, int pos, int count, StringBuilder sb) {
+		if (current == null || count >= pos) {
+			return;
+		} else if (count < pos) {
+			printRecursive(current.getNext(), pos, count + 1, sb);
 		}
 
-		return sb.toString();
-
+		if (count >= pos) {
+			sb.append(current.getInfo().toString());
+			if (current.getNext() != null) {
+				sb.append("->");
+			}
+			printRecursive(current.getNext(), pos, count + 1, sb);
+		}
 	}
 
 	public String toString() {
-
-		String textList = "";
-		Node<E> currentNode = this.first;
-
-		while (currentNode != null) {
-
-			textList += currentNode.getInfo().toString();
-			if (currentNode.getNext() != null) {
-				textList += " -> ";
-			}
-			currentNode = currentNode.getNext();
-
-		}
-
-		return textList;
-
+		return toStringRecursive(this.first);
 	}
 
+	private String toStringRecursive(Node<E> current) {
+		if (current == null) {
+			return "";
+		} else {
+			StringBuilder sb = new StringBuilder();
+			sb.append(current.getInfo().toString());
+			if (current.getNext() != null) {
+				sb.append("->\n");
+			}
+			return sb.toString() + toStringRecursive(current.getNext());
+		}
+	}
 }

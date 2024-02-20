@@ -1,7 +1,5 @@
 package co.edu.unbosque.model.persistence;
 
-public class BranchDAO {
+public class PackageDAO {
 
-	
-	
 }
