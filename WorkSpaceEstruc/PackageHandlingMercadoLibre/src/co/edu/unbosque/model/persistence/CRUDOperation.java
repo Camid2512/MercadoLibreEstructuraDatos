@@ -10,8 +10,4 @@ public interface CRUDOperation {
 
 	public boolean deleteByIndex(int index);
 
-	public void writeFile();
-
-	public void writeSerializable();
-
 }

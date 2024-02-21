@@ -1,7 +1,13 @@
 package co.edu.unbosque.model;
 
-public class CountryDTO {
+import java.io.Serializable;
 
+public class CountryDTO implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4623254957060996327L;
 	private String countryName;
 	private String currencyType;
 

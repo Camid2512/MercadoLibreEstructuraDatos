@@ -1,7 +1,13 @@
 package co.edu.unbosque.model;
 
-public class PackageDTO {
+import java.io.Serializable;
 
+public class PackageDTO implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4160775231220528607L;
 	private long serialNumber;
 	private String packageContent;
 	private String transmitterName;
