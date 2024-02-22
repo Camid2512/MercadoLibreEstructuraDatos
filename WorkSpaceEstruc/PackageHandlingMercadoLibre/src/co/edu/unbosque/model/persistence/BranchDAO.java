@@ -7,9 +7,6 @@ public class BranchDAO {
 
 	private MyLinkedList<BranchDTO> branchList;
 
-	private CountryDAO countryToAdd;
-	private PackageDAO packageList;
-
 	public BranchDAO() {
 		// TODO Auto-generated constructor stub
 
@@ -19,10 +16,12 @@ public class BranchDAO {
 
 	public void create(Object obj) {
 
-		BranchDTO newBranch = new BranchDTO();
+		branchList.addLast((BranchDTO) obj);
 
-		branchList.addLast(newBranch);
+	}
 
+	public String read() {
+		return branchList.print();
 	}
 
 	public void writeFile() {

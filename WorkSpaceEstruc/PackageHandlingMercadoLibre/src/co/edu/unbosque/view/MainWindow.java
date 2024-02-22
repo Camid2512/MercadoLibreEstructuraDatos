@@ -15,7 +15,7 @@ public class MainWindow extends JFrame {
 	 */
 	private static final long serialVersionUID = 1865397045744303071L;
 
-	private JButton nextStep;
+	private JButton nextStep, exit;
 	private JLabel mainImage;
 
 	public MainWindow() {
@@ -28,6 +28,15 @@ public class MainWindow extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setUndecorated(true);
 		setLayout(null);
+
+		exit = new JButton();
+		exit.setBounds(1107, 15, 125, 69);
+		exit.setToolTipText("SALIR");
+		exit.setBackground(new Color(0, 0, 0, 0));
+		exit.setOpaque(false);
+		exit.setContentAreaFilled(false);
+		exit.setBorderPainted(false);
+		add(exit);
 
 		nextStep = new JButton();
 		nextStep.setBounds(464, 527, 351, 64);
@@ -60,6 +69,14 @@ public class MainWindow extends JFrame {
 
 	public void setNextStep(JButton nextStep) {
 		this.nextStep = nextStep;
+	}
+
+	public JButton getExit() {
+		return exit;
+	}
+
+	public void setExit(JButton exit) {
+		this.exit = exit;
 	}
 
 	public JLabel getMainImage() {

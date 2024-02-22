@@ -20,7 +20,7 @@ public class CreateWindow extends JFrame {
 
 	private JLabel mainImage;
 	private JTextField serialNumber, packageContent, transmitterName, receiverName, weight;
-	private JButton create;
+	private JButton create, exit;
 
 	public CreateWindow() {
 		// TODO Auto-generated constructor stub
@@ -31,6 +31,15 @@ public class CreateWindow extends JFrame {
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setUndecorated(true);
 		setLayout(null);
+
+		exit = new JButton();
+		exit.setBounds(1107, 15, 125, 69);
+		exit.setToolTipText("SALIR");
+		exit.setBackground(new Color(0, 0, 0, 0));
+		exit.setOpaque(false);
+		exit.setContentAreaFilled(false);
+		exit.setBorderPainted(false);
+		add(exit);
 
 		serialNumber = new JTextField();
 		serialNumber.setBounds(599, 197, 633, 47);

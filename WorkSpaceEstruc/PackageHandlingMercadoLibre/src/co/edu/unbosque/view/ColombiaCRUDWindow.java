@@ -16,7 +16,7 @@ public class ColombiaCRUDWindow extends JFrame {
 	private static final long serialVersionUID = -2771132745796486433L;
 
 	private JLabel mainImage;
-	private JButton create, read, update, delete, filter;
+	private JButton create, read, update, delete, filter, exit;
 
 	public ColombiaCRUDWindow() {
 		// TODO Auto-generated constructor stub
@@ -27,6 +27,15 @@ public class ColombiaCRUDWindow extends JFrame {
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setUndecorated(true);
 		setLayout(null);
+
+		exit = new JButton();
+		exit.setBounds(1107, 15, 125, 69);
+		exit.setToolTipText("SALIR");
+		exit.setBackground(new Color(0, 0, 0, 0));
+		exit.setOpaque(false);
+		exit.setContentAreaFilled(false);
+		exit.setBorderPainted(false);
+		add(exit);
 
 		create = new JButton();
 		create.setBounds(641, 176, 585, 72);

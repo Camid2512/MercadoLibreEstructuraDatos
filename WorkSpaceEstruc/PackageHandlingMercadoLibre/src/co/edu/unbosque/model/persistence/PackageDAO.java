@@ -18,9 +18,7 @@ public class PackageDAO implements CRUDOperation {
 	public void create(Object obj) {
 		// TODO Auto-generated method stub
 
-		PackageDTO newPackage = new PackageDTO();
-
-		packageList.addLast(newPackage);
+		packageList.addLast((PackageDTO) obj);
 
 	}
 
@@ -67,6 +65,14 @@ public class PackageDAO implements CRUDOperation {
 			packageList.extract(packageList.get(index - 1));
 			return true;
 		}
+	}
+
+	public MyLinkedList<PackageDTO> getPackageList() {
+		return packageList;
+	}
+
+	public void setPackageList(MyLinkedList<PackageDTO> packageList) {
+		this.packageList = packageList;
 	}
 
 }
