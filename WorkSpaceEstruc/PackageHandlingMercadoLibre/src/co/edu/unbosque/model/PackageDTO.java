@@ -68,6 +68,10 @@ public class PackageDTO implements Serializable {
 		this.weight = weight;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
 		return "PackageDTO [serialNumber=" + serialNumber + ", packageContent=" + packageContent + ", transmitterName="

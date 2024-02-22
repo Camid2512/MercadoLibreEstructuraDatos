@@ -19,6 +19,14 @@ public class BranchDAO {
 
 	public void create(Object obj) {
 
+		BranchDTO newBranch = new BranchDTO();
+
+		branchList.addLast(newBranch);
+
+	}
+
+	public void writeFile() {
+
 	}
 
 }
