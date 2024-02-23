@@ -67,7 +67,25 @@ public class PackageDAO implements CRUDOperation {
 		}
 	}
 
-	public int getIndexBySerialNumber(Long serial) {
+	public int getIndexBySerialNumber(int cont, Long serial) {
+		int index = 0;
+
+		if (serial == packageList.get(cont).getInfo().getSerialNumber()) {
+
+			index = cont;
+			return index;
+
+		}
+		if (packageList.get(cont).getNext() != null) {
+
+			cont++;
+			getIndexBySerialNumber(cont, serial);
+
+		} else {
+			cont++;
+			getIndexBySerialNumber(cont, serial);
+		}
+		return index;
 
 	}
 
