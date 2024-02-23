@@ -887,6 +887,932 @@ public class Controller implements ActionListener {
 			mexCrudWin.setVisible(false);
 			break;
 		}
+		case "ARGENTINA CRUD": {
+			countryActual = "ARGENTINA";
+			currencyActual = "ARS";
+			argCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD ARGENTINA": {
+
+			selCountryWin.setVisible(true);
+			argCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE ARGENTINA": {
+
+			createWin.setVisible(true);
+			argCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE ARGENTINA": {
+
+			deleteWin.setVisible(true);
+			argCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE ARGENTINA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			argCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE ARGENTINA": {
+
+			selFilterTypeWin.setVisible(true);
+			argCrudWin.setVisible(false);
+			break;
+		}
+		case "PERU CRUD": {
+			countryActual = "PERU";
+			currencyActual = "PEN";
+			perCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD PERU": {
+
+			selCountryWin.setVisible(true);
+			perCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE PERU": {
+
+			createWin.setVisible(true);
+			perCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE PERU": {
+
+			deleteWin.setVisible(true);
+			perCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE PERU": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			perCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE PERU": {
+
+			selFilterTypeWin.setVisible(true);
+			perCrudWin.setVisible(false);
+			break;
+		}
+		case "VENEZUELA CRUD": {
+			countryActual = "VENEZUELA";
+			currencyActual = "VEF";
+			vnzlaCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD VENEZUELA": {
+
+			selCountryWin.setVisible(true);
+			vnzlaCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE VENEZUELA": {
+
+			createWin.setVisible(true);
+			vnzlaCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE VENEZUELA": {
+
+			deleteWin.setVisible(true);
+			vnzlaCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE VENEZUELA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			vnzlaCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE VENEZUELA": {
+
+			selFilterTypeWin.setVisible(true);
+			vnzlaCrudWin.setVisible(false);
+			break;
+		}
+		case "CHILE CRUD": {
+			countryActual = "CHILE";
+			currencyActual = "CLP";
+			chCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD CHILE": {
+
+			selCountryWin.setVisible(true);
+			chCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE CHILE": {
+
+			createWin.setVisible(true);
+			chCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE CHILE": {
+
+			deleteWin.setVisible(true);
+			chCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE CHILE": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			chCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE CHILE": {
+
+			selFilterTypeWin.setVisible(true);
+			chCrudWin.setVisible(false);
+			break;
+		}
+		case "ECUADOR CRUD": {
+			countryActual = "ECUADOR";
+			currencyActual = "USD";
+			ecCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD ECUADOR": {
+
+			selCountryWin.setVisible(true);
+			ecCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE ECUADOR": {
+
+			createWin.setVisible(true);
+			ecCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE ECUADOR": {
+
+			deleteWin.setVisible(true);
+			ecCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE ECUADOR": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			ecCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE ECUADOR": {
+
+			selFilterTypeWin.setVisible(true);
+			ecCrudWin.setVisible(false);
+			break;
+		}
+		case "GUATEMALA CRUD": {
+			countryActual = "GUATEMALA";
+			currencyActual = "GTQ";
+			guaCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD GUATEMALA": {
+
+			selCountryWin.setVisible(true);
+			guaCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE GUATEMALA": {
+
+			createWin.setVisible(true);
+			guaCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE GUATEMALA": {
+
+			deleteWin.setVisible(true);
+			guaCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE GUATEMALA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			guaCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE GUATEMALA": {
+
+			selFilterTypeWin.setVisible(true);
+			guaCrudWin.setVisible(false);
+			break;
+		}
+		case "CUBA CRUD": {
+			countryActual = "CUBA";
+			currencyActual = "CUP";
+			cubCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD CUBA": {
+
+			selCountryWin.setVisible(true);
+			cubCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE CUBA": {
+
+			createWin.setVisible(true);
+			cubCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE CUBA": {
+
+			deleteWin.setVisible(true);
+			cubCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE CUBA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			cubCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE CUBA": {
+
+			selFilterTypeWin.setVisible(true);
+			cubCrudWin.setVisible(false);
+			break;
+		}
+		case "BOLIVIA CRUD": {
+			countryActual = "BOLIVIA";
+			currencyActual = "BOV";
+			bolCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD BOLIVIA": {
+
+			selCountryWin.setVisible(true);
+			bolCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE BOLIVIA": {
+
+			createWin.setVisible(true);
+			bolCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE BOLIVIA": {
+
+			deleteWin.setVisible(true);
+			bolCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE BOLIVIA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			bolCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE BOLIVIA": {
+
+			selFilterTypeWin.setVisible(true);
+			bolCrudWin.setVisible(false);
+			break;
+		}
+		case "REPUBLICA DOMINICANA CRUD": {
+			countryActual = "REPUBLICA DOMINICANA";
+			currencyActual = "DOP";
+			rdCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD REPUBLICA DOMINICANA": {
+
+			selCountryWin.setVisible(true);
+			rdCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE REPUBLICA DOMINICANA": {
+
+			createWin.setVisible(true);
+			rdCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE REPUBLICA DOMINICANA": {
+
+			deleteWin.setVisible(true);
+			rdCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE REPUBLICA DOMINICANA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			rdCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE REPUBLICA DOMINICANA": {
+
+			selFilterTypeWin.setVisible(true);
+			rdCrudWin.setVisible(false);
+			break;
+
+		}
+		case "HONDURAS CRUD": {
+			countryActual = "HONDURAS";
+			currencyActual = "HNL";
+			honCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD HONDURAS": {
+
+			selCountryWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE HONDURAS": {
+
+			createWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE HONDURAS": {
+
+			deleteWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE HONDURAS": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE HONDURAS": {
+
+			selFilterTypeWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			break;
+		}
+		case "PARAGUAY CRUD": {
+			countryActual = "PARAGUAY";
+			currencyActual = "PYG";
+			parCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD PARAGUAY": {
+
+			selCountryWin.setVisible(true);
+			parCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE PARAGUAY": {
+
+			createWin.setVisible(true);
+			parCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE PARAGUAY": {
+
+			deleteWin.setVisible(true);
+			parCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE PARAGUAY": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			parCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE PARAGUAY": {
+
+			selFilterTypeWin.setVisible(true);
+			honCrudWin.setVisible(false);
+			break;
+		}
+		case "EL SALVADOR CRUD": {
+			countryActual = "EL SALVADOR";
+			currencyActual = "SVC";
+			salvCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD EL SALVADOR": {
+
+			selCountryWin.setVisible(true);
+			salvCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE EL SALVADOR": {
+
+			createWin.setVisible(true);
+			salvCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE EL SALVADOR": {
+
+			deleteWin.setVisible(true);
+			salvCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE EL SALVADOR": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			salvCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE EL SALVADOR": {
+
+			selFilterTypeWin.setVisible(true);
+			salvCrudWin.setVisible(false);
+			break;
+		}
+		case "NICARAGUA CRUD": {
+			countryActual = "NICARAGUA";
+			currencyActual = "NIO";
+			nicCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD NICARAGUA": {
+
+			selCountryWin.setVisible(true);
+			nicCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE NICARAGUA": {
+
+			createWin.setVisible(true);
+			nicCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE NICARAGUA": {
+
+			deleteWin.setVisible(true);
+			nicCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE NICARAGUA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			nicCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE NICARAGUA": {
+
+			selFilterTypeWin.setVisible(true);
+			nicCrudWin.setVisible(false);
+			break;
+		}
+		case "COSTA RICA CRUD": {
+			countryActual = "COSTA RICA";
+			currencyActual = "CRC";
+			crCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD COSTA RICA": {
+
+			selCountryWin.setVisible(true);
+			crCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE COSTA RICA": {
+
+			createWin.setVisible(true);
+			crCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE COSTA RICA": {
+
+			deleteWin.setVisible(true);
+			crCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE COSTA RICA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			crCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE COSTA RICA": {
+
+			selFilterTypeWin.setVisible(true);
+			crCrudWin.setVisible(false);
+			break;
+		}
+		case "PUERTO RICO CRUD": {
+			countryActual = "PUERTO RICO";
+			currencyActual = "USD";
+			prCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD PUERTO RICO": {
+
+			selCountryWin.setVisible(true);
+			prCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE PUERTO RICO": {
+
+			createWin.setVisible(true);
+			prCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE PUERTO RICO": {
+
+			deleteWin.setVisible(true);
+			prCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE PUERTO RICO": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			prCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE PUERTO RICO": {
+
+			selFilterTypeWin.setVisible(true);
+			prCrudWin.setVisible(false);
+			break;
+		}
+		case "PANAMA CRUD": {
+			countryActual = "PANAMA";
+			currencyActual = "USD";
+			panCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD PANAMA": {
+
+			selCountryWin.setVisible(true);
+			panCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE PANAMA": {
+
+			createWin.setVisible(true);
+			panCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE PANAMA": {
+
+			deleteWin.setVisible(true);
+			panCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE PANAMA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			panCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE PANAMA": {
+
+			selFilterTypeWin.setVisible(true);
+			panCrudWin.setVisible(false);
+			break;
+		}
+		case "URUGUAY CRUD": {
+			countryActual = "URUGUAY";
+			currencyActual = "UYU";
+			uruCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD URUGUAY": {
+
+			selCountryWin.setVisible(true);
+			uruCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE URUGUAY": {
+
+			createWin.setVisible(true);
+			uruCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE URUGUAY": {
+
+			deleteWin.setVisible(true);
+			uruCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE URUGUAY": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			uruCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE URUGUAY": {
+
+			selFilterTypeWin.setVisible(true);
+			uruCrudWin.setVisible(false);
+			break;
+		}
+		case "JAMAICA CRUD": {
+			countryActual = "JAMAICA";
+			currencyActual = "JMD";
+			jamCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD JAMAICA": {
+
+			selCountryWin.setVisible(true);
+			jamCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE JAMAICA": {
+
+			createWin.setVisible(true);
+			jamCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE JAMAICA": {
+
+			deleteWin.setVisible(true);
+			jamCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE JAMAICA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			jamCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE JAMAICA": {
+
+			selFilterTypeWin.setVisible(true);
+			jamCrudWin.setVisible(false);
+			break;
+		}
+		case "TRINIDAD Y TOBAGO CRUD": {
+			countryActual = "TRINIDAD Y TOBAGO";
+			currencyActual = "TTD";
+			triniTobCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD TRINIDAD Y TOBAGO": {
+
+			selCountryWin.setVisible(true);
+			triniTobCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE TRINIDAD Y TOBAGO": {
+
+			createWin.setVisible(true);
+			triniTobCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE TRINIDAD Y TOBAGO": {
+
+			deleteWin.setVisible(true);
+			triniTobCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE TRINIDAD Y TOBAGO": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			triniTobCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE TRINIDAD Y TOBAGO": {
+
+			selFilterTypeWin.setVisible(true);
+			triniTobCrudWin.setVisible(false);
+			break;
+		}
+		case "HAITI CRUD": {
+			countryActual = "HAITI";
+			currencyActual = "USD";
+			haiCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD HAITI": {
+
+			selCountryWin.setVisible(true);
+			haiCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE HAITI": {
+
+			createWin.setVisible(true);
+			haiCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE HAITI": {
+
+			deleteWin.setVisible(true);
+			haiCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE HAITI": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			haiCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE HAITI": {
+
+			selFilterTypeWin.setVisible(true);
+			haiCrudWin.setVisible(false);
+			break;
+		}
+		case "GUYANA CRUD": {
+			countryActual = "GUYANA";
+			currencyActual = "EUR";
+			guyCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD GUYANA": {
+
+			selCountryWin.setVisible(true);
+			guyCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE GUYANA": {
+
+			createWin.setVisible(true);
+			guyCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE GUYANA": {
+
+			deleteWin.setVisible(true);
+			guyCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE GUYANA": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			guyCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE GUYANA": {
+
+			selFilterTypeWin.setVisible(true);
+			guyCrudWin.setVisible(false);
+			break;
+		}
+		case "BELICE CRUD": {
+			countryActual = "BELICE";
+			currencyActual = "BZD";
+			belCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD BELICE": {
+
+			selCountryWin.setVisible(true);
+			belCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE BELICE": {
+
+			createWin.setVisible(true);
+			belCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE BELICE": {
+
+			deleteWin.setVisible(true);
+			belCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE BELICE": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			belCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE BELICE": {
+
+			selFilterTypeWin.setVisible(true);
+			belCrudWin.setVisible(false);
+			break;
+		}
+
 		case "BACK DELETE SELECT": {
 			backDelete();
 			break;
@@ -1113,144 +2039,144 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
 
-			colCrudWin.setVisible(true);
+			argCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PERU") && currencyActual.equals("PEN")) {
 
-			colCrudWin.setVisible(true);
+			perCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("VENEZUELA") && currencyActual.equals("VEF")) {
 
-			colCrudWin.setVisible(true);
+			vnzlaCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("CHILE") && currencyActual.equals("CLP")) {
 
-			colCrudWin.setVisible(true);
+			chCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("ECUADOR") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			ecCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("GUATEMALA") && currencyActual.equals("GTQ")) {
 
-			colCrudWin.setVisible(true);
+			guaCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("CUBA") && currencyActual.equals("CUP")) {
 
-			colCrudWin.setVisible(true);
+			cubCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("BOLIVIA") && currencyActual.equals("BOV")) {
 
-			colCrudWin.setVisible(true);
+			bolCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("REPUBLICA DOMINICANA") && currencyActual.equals("DOP")) {
 
-			colCrudWin.setVisible(true);
+			rdCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
 
-			colCrudWin.setVisible(true);
+			honCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PARAGUAY") && currencyActual.equals("PYG")) {
 
-			colCrudWin.setVisible(true);
+			parCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
 
-			colCrudWin.setVisible(true);
+			salvCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("NICARAGUA") && currencyActual.equals("NIO")) {
 
-			colCrudWin.setVisible(true);
+			nicCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("COSTA RICA") && currencyActual.equals("CRC")) {
 
-			colCrudWin.setVisible(true);
+			crCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PUERTO RICO") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			prCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PANAMA") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			panCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("URUGUAY") && currencyActual.equals("UYU")) {
 
-			colCrudWin.setVisible(true);
+			uruCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("JAMAICA") && currencyActual.equals("JMD")) {
 
-			colCrudWin.setVisible(true);
+			jamCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("TRINIDAD Y TOBAGO") && currencyActual.equals("TTD")) {
 
-			colCrudWin.setVisible(true);
+			triniTobCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("HAITI") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			haiCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("GUYANA") && currencyActual.equals("EUR")) {
 
-			colCrudWin.setVisible(true);
+			guyCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
@@ -1264,7 +2190,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
 
-			colCrudWin.setVisible(true);
+			belCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
@@ -1276,146 +2202,171 @@ public class Controller implements ActionListener {
 
 			colCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
 			mexCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
 
-			colCrudWin.setVisible(true);
+			argCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PERU") && currencyActual.equals("PEN")) {
 
-			colCrudWin.setVisible(true);
+			perCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("VENEZUELA") && currencyActual.equals("VEF")) {
 
-			colCrudWin.setVisible(true);
+			vnzlaCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("CHILE") && currencyActual.equals("CLP")) {
 
-			colCrudWin.setVisible(true);
+			chCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("ECUADOR") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			ecCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("GUATEMALA") && currencyActual.equals("GTQ")) {
 
-			colCrudWin.setVisible(true);
+			guaCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("CUBA") && currencyActual.equals("CUP")) {
 
-			colCrudWin.setVisible(true);
+			cubCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("BOLIVIA") && currencyActual.equals("BOV")) {
 
-			colCrudWin.setVisible(true);
+			bolCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("REPUBLICA DOMINICANA") && currencyActual.equals("DOP")) {
 
-			colCrudWin.setVisible(true);
+			rdCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
 
-			colCrudWin.setVisible(true);
+			honCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PARAGUAY") && currencyActual.equals("PYG")) {
 
-			colCrudWin.setVisible(true);
+			parCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
 
-			colCrudWin.setVisible(true);
+			salvCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("NICARAGUA") && currencyActual.equals("NIO")) {
 
-			colCrudWin.setVisible(true);
+			nicCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("COSTA RICA") && currencyActual.equals("CRC")) {
 
-			colCrudWin.setVisible(true);
+			crCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PUERTO RICO") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			prCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PANAMA") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			panCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("URUGUAY") && currencyActual.equals("UYU")) {
 
-			colCrudWin.setVisible(true);
+			uruCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("JAMAICA") && currencyActual.equals("JMD")) {
 
-			colCrudWin.setVisible(true);
+			jamCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("TRINIDAD Y TOBAGO") && currencyActual.equals("TTD")) {
 
-			colCrudWin.setVisible(true);
+			triniTobCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("HAITI") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			haiCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("GUYANA") && currencyActual.equals("EUR")) {
 
-			colCrudWin.setVisible(true);
+			guyCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
 			surinamCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
 
-			colCrudWin.setVisible(true);
+			belCrudWin.setVisible(true);
 			createWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 	}
@@ -1424,154 +2375,173 @@ public class Controller implements ActionListener {
 		if (countryActual.equals("COLOMBIA") && currencyActual.equals("COP")) {
 
 			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
 			mexCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			argCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PERU") && currencyActual.equals("PEN")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			perCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("VENEZUELA") && currencyActual.equals("VEF")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			vnzlaCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("CHILE") && currencyActual.equals("CLP")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			chCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("ECUADOR") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			ecCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("GUATEMALA") && currencyActual.equals("GTQ")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			guaCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("CUBA") && currencyActual.equals("CUP")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			cubCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("BOLIVIA") && currencyActual.equals("BOV")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			bolCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("REPUBLICA DOMINICANA") && currencyActual.equals("DOP")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			rdCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			honCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PARAGUAY") && currencyActual.equals("PYG")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			parCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			salvCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("NICARAGUA") && currencyActual.equals("NIO")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			nicCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("COSTA RICA") && currencyActual.equals("CRC")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			crCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PUERTO RICO") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			prCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PANAMA") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			panCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("URUGUAY") && currencyActual.equals("UYU")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			uruCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("JAMAICA") && currencyActual.equals("JMD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			jamCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("TRINIDAD Y TOBAGO") && currencyActual.equals("TTD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			triniTobCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("HAITI") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			haiCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("GUYANA") && currencyActual.equals("EUR")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			guyCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
 			surinamCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
 
-			colCrudWin.setVisible(true);
-			selPackUpdateWin.setVisible(false);
-			updateBoxSelectUpdatePackage();
+			belCrudWin.setVisible(true);
+			updateWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 
 	}
@@ -1581,128 +2551,172 @@ public class Controller implements ActionListener {
 
 			colCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
 			mexCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
 
-			colCrudWin.setVisible(true);
+			argCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 
 		}
 		if (countryActual.equals("PERU") && currencyActual.equals("PEN")) {
 
-			colCrudWin.setVisible(true);
+			perCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("VENEZUELA") && currencyActual.equals("VEF")) {
 
-			colCrudWin.setVisible(true);
+			vnzlaCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("CHILE") && currencyActual.equals("CLP")) {
 
-			colCrudWin.setVisible(true);
+			chCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("ECUADOR") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			ecCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("GUATEMALA") && currencyActual.equals("GTQ")) {
 
-			colCrudWin.setVisible(true);
+			guaCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("CUBA") && currencyActual.equals("CUP")) {
 
-			colCrudWin.setVisible(true);
+			cubCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("BOLIVIA") && currencyActual.equals("BOV")) {
 
-			colCrudWin.setVisible(true);
+			bolCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("REPUBLICA DOMINICANA") && currencyActual.equals("DOP")) {
 
-			colCrudWin.setVisible(true);
+			rdCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
 
-			colCrudWin.setVisible(true);
+			honCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PARAGUAY") && currencyActual.equals("PYG")) {
 
-			colCrudWin.setVisible(true);
+			parCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
 
-			colCrudWin.setVisible(true);
+			salvCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
 		}
 		if (countryActual.equals("NICARAGUA") && currencyActual.equals("NIO")) {
 
-			colCrudWin.setVisible(true);
+			nicCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("COSTA RICA") && currencyActual.equals("CRC")) {
 
-			colCrudWin.setVisible(true);
+			crCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PUERTO RICO") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			prCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("PANAMA") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			panCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("URUGUAY") && currencyActual.equals("UYU")) {
 
-			colCrudWin.setVisible(true);
+			uruCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("JAMAICA") && currencyActual.equals("JMD")) {
 
-			colCrudWin.setVisible(true);
+			jamCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("TRINIDAD Y TOBAGO") && currencyActual.equals("TTD")) {
 
-			colCrudWin.setVisible(true);
+			triniTobCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("HAITI") && currencyActual.equals("USD")) {
 
-			colCrudWin.setVisible(true);
+			haiCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("GUYANA") && currencyActual.equals("EUR")) {
 
-			colCrudWin.setVisible(true);
+			guyCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
 			surinamCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
 
-			colCrudWin.setVisible(true);
+			belCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
+			updateBoxSelectDeletePackage();
+
 		}
 
 	}
