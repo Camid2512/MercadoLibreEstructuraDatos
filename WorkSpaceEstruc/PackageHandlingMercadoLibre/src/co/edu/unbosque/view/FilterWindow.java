@@ -6,27 +6,29 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-public class SelectFilterTypeWindow extends JFrame {
+public class FilterWindow extends JFrame {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1096794319769407597L;
+	private static final long serialVersionUID = 5181181913778235457L;
 
 	private JLabel mainImage;
 	private JButton exit, back, filter;
-	private JComboBox<String> select;
+	private JTextField searchWord;
 
-	public SelectFilterTypeWindow() {
+	public FilterWindow() {
 		// TODO Auto-generated constructor stub
+
 		setSize(1280, 720);
 		setResizable(false);
 		setLocationRelativeTo(null);
-		setTitle("Seleccionar Parametro para buscar");
+		setTitle("FILTRO");
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setUndecorated(true);
 		setLayout(null);
@@ -49,17 +51,15 @@ public class SelectFilterTypeWindow extends JFrame {
 		back.setBorderPainted(false);
 		add(back);
 
-		select = new JComboBox<>();
-		select.setBounds(320, 376, 633, 46);
-		select.addItem("Numero de serie");
-		select.addItem("Contenido del paquete");
-		select.addItem("Nombre emisor");
-		select.addItem("Nombre receptor");
-		select.addItem("Peso");
-		select.setBackground(new Color(225, 223, 228));
-		select.setForeground(Color.black);
-		select.setFont(new Font("Arial", 1, 25));
-		add(select);
+		searchWord = new JTextField();
+		searchWord.setBounds(320, 376, 633, 46);
+		searchWord.setBackground(new Color(0, 0, 0, 0));
+		searchWord.setOpaque(false);
+		searchWord.setBorder(new EmptyBorder(15, 15, 15, 15));
+		searchWord.setFont(new Font("Arial", 1, 25));
+		searchWord.setToolTipText("INGRESE LA PALABRA CLAVE");
+		searchWord.setForeground(Color.white);
+		add(searchWord);
 
 		filter = new JButton();
 		filter.setBounds(521, 459, 238, 55);
@@ -74,7 +74,7 @@ public class SelectFilterTypeWindow extends JFrame {
 		mainImage.setBounds(0, 0, 1280, 720);
 
 		Image temporal1;
-		temporal1 = new ImageIcon("src/Images/selactualizar.png").getImage();
+		temporal1 = new ImageIcon("src/Images/filtrar.png").getImage();
 
 		ImageIcon img1;
 		img1 = new ImageIcon(
@@ -118,15 +118,16 @@ public class SelectFilterTypeWindow extends JFrame {
 		this.filter = filter;
 	}
 
-	public JComboBox<String> getSelect() {
-		return select;
+	public JTextField getSearchWord() {
+		return searchWord;
 	}
 
-	public void setSelect(JComboBox<String> select) {
-		this.select = select;
+	public void setSearchWord(JTextField searchWord) {
+		this.searchWord = searchWord;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 }

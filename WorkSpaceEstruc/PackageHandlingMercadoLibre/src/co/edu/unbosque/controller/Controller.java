@@ -8,11 +8,11 @@ import javax.swing.JOptionPane;
 import co.edu.unbosque.model.BranchDTO;
 import co.edu.unbosque.model.PackageDTO;
 import co.edu.unbosque.model.persistence.BranchDAO;
-import co.edu.unbosque.model.persistence.CRUDOperation;
 import co.edu.unbosque.model.persistence.CountryDAO;
 import co.edu.unbosque.model.persistence.PackageDAO;
 import co.edu.unbosque.view.ColombiaCRUDWindow;
 import co.edu.unbosque.view.CreateWindow;
+import co.edu.unbosque.view.FilterWindow;
 import co.edu.unbosque.view.MainWindow;
 import co.edu.unbosque.view.SelPackageDeleteWindow;
 import co.edu.unbosque.view.SelectCountryWindow;
@@ -34,6 +34,7 @@ public class Controller implements ActionListener {
 	private SelectPackageUpdateWindow selPackUpdateWin;
 	private UpdateWindow updateWin;
 	private SelectFilterTypeWindow selFilterTypeWin;
+	private FilterWindow filterWin;
 
 	private String countryActual;
 	private String currencyActual;
@@ -52,6 +53,7 @@ public class Controller implements ActionListener {
 		selPackUpdateWin = new SelectPackageUpdateWindow();
 		updateWin = new UpdateWindow();
 		selFilterTypeWin = new SelectFilterTypeWindow();
+		filterWin = new FilterWindow();
 
 		addReaders();
 	}
@@ -132,6 +134,24 @@ public class Controller implements ActionListener {
 
 		updateWin.getUpdate().addActionListener(this);
 		updateWin.getUpdate().setActionCommand("UPDATE PACKAGE");
+
+		selFilterTypeWin.getExit().addActionListener(this);
+		selFilterTypeWin.getExit().setActionCommand("EXIT");
+
+		selFilterTypeWin.getBack().addActionListener(this);
+		selFilterTypeWin.getBack().setActionCommand("BACK SELECT TYPE FILTER");
+
+		selFilterTypeWin.getFilter().addActionListener(this);
+		selFilterTypeWin.getFilter().setActionCommand("FILTER");
+
+		filterWin.getExit().addActionListener(this);
+		filterWin.getExit().setActionCommand("EXIT");
+
+		filterWin.getBack().addActionListener(this);
+		filterWin.getBack().setActionCommand("BACK FILTER");
+
+		filterWin.getFilter().addActionListener(this);
+		filterWin.getFilter().setActionCommand("FILTER PACKAGES");
 
 	}
 
@@ -258,6 +278,31 @@ public class Controller implements ActionListener {
 			colCrudWin.setVisible(false);
 			break;
 		}
+		case "BACK SELECT TYPE FILTER": {
+			backSelFilter();
+			break;
+
+		}
+		case "FILTER": {
+
+			filterWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+			break;
+
+		}
+		case "FILTER PACKAGES": {
+			filterPackages();
+			selFilterTypeWin.setVisible(true);
+			filterWin.setVisible(false);
+			break;
+
+		}
+		case "BACK FILTER": {
+
+			selFilterTypeWin.setVisible(true);
+			filterWin.setVisible(false);
+			break;
+		}
 		default:
 			break;
 		}
@@ -311,6 +356,29 @@ public class Controller implements ActionListener {
 
 		System.out.println("-------------");
 		System.out.println(branDAO.read());
+	}
+
+	public void filterPackages() {
+
+		if (selFilterTypeWin.getSelect().getSelectedItem().toString().equals("Numero de serie")) {
+
+			Long searchNum = Long.parseLong(filterWin.getSearchWord().getText());
+			JOptionPane.showMessageDialog(mainWin, packDAO.searchBySerialNumber(0, searchNum));
+
+		} else if (selFilterTypeWin.getSelect().getSelectedItem().toString().equals("Contenido del paquete")) {
+			String searchContent = filterWin.getSearchWord().getText();
+			JOptionPane.showMessageDialog(mainWin, packDAO.searchByPackageContent(0, searchContent));
+		} else if (selFilterTypeWin.getSelect().getSelectedItem().toString().equals("Nombre del emisor")) {
+			String searchTransmitter = filterWin.getSearchWord().getText();
+			JOptionPane.showMessageDialog(mainWin, packDAO.searchByTransmitterName(0, searchTransmitter));
+		} else if (selFilterTypeWin.getSelect().getSelectedItem().toString().equals("Nombre del receptor")) {
+			String searchReceptor = filterWin.getSearchWord().getText();
+			JOptionPane.showMessageDialog(mainWin, packDAO.searchByRecieverName(0, searchReceptor));
+		} else if (selFilterTypeWin.getSelect().getSelectedItem().toString().equals("Peso")) {
+			float searchWeight = Float.parseFloat(filterWin.getSearchWord().getText());
+			JOptionPane.showMessageDialog(mainWin, packDAO.searchByWeight(0, searchWeight));
+		}
+
 	}
 
 	public boolean exitConfirm() {
@@ -842,6 +910,137 @@ public class Controller implements ActionListener {
 			colCrudWin.setVisible(true);
 			selPackUpdateWin.setVisible(false);
 			updateBoxSelectUpdatePackage();
+		}
+
+	}
+
+	public void backSelFilter() {
+		if (countryActual.equals("COLOMBIA") && currencyActual.equals("COP")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+
+		}
+		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+
+		}
+		if (countryActual.equals("PERU") && currencyActual.equals("PEN")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("VENEZUELA") && currencyActual.equals("VEF")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("CHILE") && currencyActual.equals("CLP")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("ECUADOR") && currencyActual.equals("USD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("GUATEMALA") && currencyActual.equals("GTQ")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("CUBA") && currencyActual.equals("CUP")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("BOLIVIA") && currencyActual.equals("BOV")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("REPUBLICA DOMINICANA") && currencyActual.equals("DOP")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("PARAGUAY") && currencyActual.equals("PYG")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("NICARAGUA") && currencyActual.equals("NIO")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("COSTA RICA") && currencyActual.equals("CRC")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("PUERTO RICO") && currencyActual.equals("USD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("PANAMA") && currencyActual.equals("USD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("URUGUAY") && currencyActual.equals("UYU")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("JAMAICA") && currencyActual.equals("JMD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("TRINIDAD Y TOBAGO") && currencyActual.equals("TTD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("HAITI") && currencyActual.equals("USD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("GUYANA") && currencyActual.equals("EUR")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
+		}
+		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
+
+			colCrudWin.setVisible(true);
+			selFilterTypeWin.setVisible(false);
 		}
 
 	}
