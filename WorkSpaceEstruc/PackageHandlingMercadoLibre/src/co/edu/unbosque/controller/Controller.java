@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.BranchDTO;
-import co.edu.unbosque.model.CountryDTO;
 import co.edu.unbosque.model.PackageDTO;
 import co.edu.unbosque.model.persistence.BranchDAO;
+import co.edu.unbosque.model.persistence.CRUDOperation;
 import co.edu.unbosque.model.persistence.CountryDAO;
 import co.edu.unbosque.model.persistence.PackageDAO;
 import co.edu.unbosque.view.ColombiaCRUDWindow;
@@ -16,6 +16,7 @@ import co.edu.unbosque.view.CreateWindow;
 import co.edu.unbosque.view.MainWindow;
 import co.edu.unbosque.view.SelPackageDeleteWindow;
 import co.edu.unbosque.view.SelectCountryWindow;
+import co.edu.unbosque.view.SelectFilterTypeWindow;
 import co.edu.unbosque.view.SelectPackageUpdateWindow;
 import co.edu.unbosque.view.UpdateWindow;
 
@@ -32,6 +33,7 @@ public class Controller implements ActionListener {
 	private SelPackageDeleteWindow deleteWin;
 	private SelectPackageUpdateWindow selPackUpdateWin;
 	private UpdateWindow updateWin;
+	private SelectFilterTypeWindow selFilterTypeWin;
 
 	private String countryActual;
 	private String currencyActual;
@@ -49,6 +51,7 @@ public class Controller implements ActionListener {
 		deleteWin = new SelPackageDeleteWindow();
 		selPackUpdateWin = new SelectPackageUpdateWindow();
 		updateWin = new UpdateWindow();
+		selFilterTypeWin = new SelectFilterTypeWindow();
 
 		addReaders();
 	}
@@ -90,6 +93,9 @@ public class Controller implements ActionListener {
 
 		colCrudWin.getUpdate().addActionListener(this);
 		colCrudWin.getUpdate().setActionCommand("SELECT UPDATE COL");
+
+		colCrudWin.getFilter().addActionListener(this);
+		colCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE");
 
 		createWin.getExit().addActionListener(this);
 		createWin.getExit().setActionCommand("EXIT");
@@ -245,6 +251,12 @@ public class Controller implements ActionListener {
 			updateWin.setVisible(false);
 			break;
 
+		}
+		case "SELECT FILTER TYPE": {
+
+			selFilterTypeWin.setVisible(true);
+			colCrudWin.setVisible(false);
+			break;
 		}
 		default:
 			break;
