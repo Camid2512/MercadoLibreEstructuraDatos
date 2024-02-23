@@ -10,17 +10,39 @@ import co.edu.unbosque.model.PackageDTO;
 import co.edu.unbosque.model.persistence.BranchDAO;
 import co.edu.unbosque.model.persistence.CountryDAO;
 import co.edu.unbosque.model.persistence.PackageDAO;
+import co.edu.unbosque.view.ArgentinaCRUDWindow;
+import co.edu.unbosque.view.BeliceCRUDWindow;
+import co.edu.unbosque.view.BoliviaCRUDWindow;
+import co.edu.unbosque.view.ChileCRUDWindow;
 import co.edu.unbosque.view.ColombiaCRUDWindow;
+import co.edu.unbosque.view.CostaRicaCRUDWindow;
 import co.edu.unbosque.view.CreateWindow;
+import co.edu.unbosque.view.CubaCRUDWindow;
+import co.edu.unbosque.view.EcuadorCRUDWindow;
+import co.edu.unbosque.view.ElSalvadorCRUDWindow;
 import co.edu.unbosque.view.FilterWindow;
+import co.edu.unbosque.view.GuatemalaCRUDWindow;
+import co.edu.unbosque.view.GuyanaCRUDWindow;
+import co.edu.unbosque.view.HaitiCRUDWindow;
+import co.edu.unbosque.view.HondurasCRUDWindow;
+import co.edu.unbosque.view.JamaicaCRUDWindow;
 import co.edu.unbosque.view.MainWindow;
 import co.edu.unbosque.view.MexicoCRUDWindow;
+import co.edu.unbosque.view.NicaraguaCRUDWindow;
+import co.edu.unbosque.view.PanamaCRUDWindow;
+import co.edu.unbosque.view.ParaguayCRUDWindow;
+import co.edu.unbosque.view.PeruCRUDWindow;
+import co.edu.unbosque.view.PuertoRicoCRUDWindow;
+import co.edu.unbosque.view.RepDominicanaCRUDWindow;
 import co.edu.unbosque.view.SelPackageDeleteWindow;
 import co.edu.unbosque.view.SelectCountryWindow;
 import co.edu.unbosque.view.SelectFilterTypeWindow;
 import co.edu.unbosque.view.SelectPackageUpdateWindow;
 import co.edu.unbosque.view.SurinamCRUDWindow;
+import co.edu.unbosque.view.TriniYTobCRUDWindow;
 import co.edu.unbosque.view.UpdateWindow;
+import co.edu.unbosque.view.UruguayCRUDWindow;
+import co.edu.unbosque.view.VenezuelaCRUDWindow;
 
 public class Controller implements ActionListener {
 
@@ -31,6 +53,28 @@ public class Controller implements ActionListener {
 	private ColombiaCRUDWindow colCrudWin;
 	private SurinamCRUDWindow surinamCrudWin;
 	private MexicoCRUDWindow mexCrudWin;
+	private ArgentinaCRUDWindow argCrudWin;
+	private VenezuelaCRUDWindow vnzlaCrudWin;
+	private PeruCRUDWindow perCrudWin;
+	private ChileCRUDWindow chCrudWin;
+	private EcuadorCRUDWindow ecCrudWin;
+	private GuatemalaCRUDWindow guaCrudWin;
+	private CubaCRUDWindow cubCrudWin;
+	private BoliviaCRUDWindow bolCrudWin;
+	private RepDominicanaCRUDWindow rdCrudWin;
+	private HondurasCRUDWindow honCrudWin;
+	private ParaguayCRUDWindow parCrudWin;
+	private ElSalvadorCRUDWindow salvCrudWin;
+	private NicaraguaCRUDWindow nicCrudWin;
+	private CostaRicaCRUDWindow crCrudWin;
+	private PuertoRicoCRUDWindow prCrudWin;
+	private PanamaCRUDWindow panCrudWin;
+	private UruguayCRUDWindow uruCrudWin;
+	private JamaicaCRUDWindow jamCrudWin;
+	private TriniYTobCRUDWindow triniTobCrudWin;
+	private HaitiCRUDWindow haiCrudWin;
+	private GuyanaCRUDWindow guyCrudWin;
+	private BeliceCRUDWindow belCrudWin;
 
 	private MainWindow mainWin;
 	private SelectCountryWindow selCountryWin;
@@ -53,6 +97,28 @@ public class Controller implements ActionListener {
 		colCrudWin = new ColombiaCRUDWindow();
 		surinamCrudWin = new SurinamCRUDWindow();
 		mexCrudWin = new MexicoCRUDWindow();
+		argCrudWin = new ArgentinaCRUDWindow();
+		vnzlaCrudWin = new VenezuelaCRUDWindow();
+		perCrudWin = new PeruCRUDWindow();
+		chCrudWin = new ChileCRUDWindow();
+		ecCrudWin = new EcuadorCRUDWindow();
+		guaCrudWin = new GuatemalaCRUDWindow();
+		cubCrudWin = new CubaCRUDWindow();
+		bolCrudWin = new BoliviaCRUDWindow();
+		rdCrudWin = new RepDominicanaCRUDWindow();
+		honCrudWin = new HondurasCRUDWindow();
+		parCrudWin = new ParaguayCRUDWindow();
+		salvCrudWin = new ElSalvadorCRUDWindow();
+		nicCrudWin = new NicaraguaCRUDWindow();
+		crCrudWin = new CostaRicaCRUDWindow();
+		prCrudWin = new PuertoRicoCRUDWindow();
+		panCrudWin = new PanamaCRUDWindow();
+		uruCrudWin = new UruguayCRUDWindow();
+		jamCrudWin = new JamaicaCRUDWindow();
+		triniTobCrudWin = new TriniYTobCRUDWindow();
+		haiCrudWin = new HaitiCRUDWindow();
+		guyCrudWin = new GuyanaCRUDWindow();
+		belCrudWin = new BeliceCRUDWindow();
 
 		mainWin = new MainWindow();
 		selCountryWin = new SelectCountryWindow();
@@ -94,6 +160,72 @@ public class Controller implements ActionListener {
 
 		selCountryWin.getMexicoBtn().addActionListener(this);
 		selCountryWin.getMexicoBtn().setActionCommand("MEXICO CRUD");
+
+		selCountryWin.getVenezuelBtn().addActionListener(this);
+		selCountryWin.getVenezuelBtn().setActionCommand("VENEZUELA CRUD");
+
+		selCountryWin.getArgentinBtn().addActionListener(this);
+		selCountryWin.getArgentinBtn().setActionCommand("ARGENTINA CRUD");
+
+		selCountryWin.getPeruBtn().addActionListener(this);
+		selCountryWin.getPeruBtn().setActionCommand("PERU CRUD");
+
+		selCountryWin.getChileBtn().addActionListener(this);
+		selCountryWin.getChileBtn().setActionCommand("CHILE CRUD");
+
+		selCountryWin.getEcuadorBtn().addActionListener(this);
+		selCountryWin.getEcuadorBtn().setActionCommand("ECUADOR CRUD");
+
+		selCountryWin.getGuatBtn().addActionListener(this);
+		selCountryWin.getGuatBtn().setActionCommand("GUATEMALA CRUD");
+
+		selCountryWin.getCubaBtn().addActionListener(this);
+		selCountryWin.getCubaBtn().setActionCommand("CUBA CRUD");
+
+		selCountryWin.getBolBtn().addActionListener(this);
+		selCountryWin.getBolBtn().setActionCommand("BOLIVIA CRUD");
+
+		selCountryWin.getRepDomBtn().addActionListener(this);
+		selCountryWin.getRepDomBtn().setActionCommand("REPUBLICA DOMINICANA CRUD");
+
+		selCountryWin.getHonduBtn().addActionListener(this);
+		selCountryWin.getHonduBtn().setActionCommand("HONDURAS CRUD");
+
+		selCountryWin.getParaguayBtn().addActionListener(this);
+		selCountryWin.getParaguayBtn().setActionCommand("PARAGUAY CRUD");
+
+		selCountryWin.getSalvadorBtn().addActionListener(this);
+		selCountryWin.getSalvadorBtn().setActionCommand("EL SALVADOR CRUD");
+
+		selCountryWin.getNicaraguaBtn().addActionListener(this);
+		selCountryWin.getNicaraguaBtn().setActionCommand("NICARAGUA CRUD");
+
+		selCountryWin.getCostRicaBtn().addActionListener(this);
+		selCountryWin.getCostRicaBtn().setActionCommand("COSTA RICA CRUD");
+
+		selCountryWin.getPuertRicoBtn().addActionListener(this);
+		selCountryWin.getPuertRicoBtn().setActionCommand("PUERTO RICO CRUD");
+
+		selCountryWin.getPanamaBtn().addActionListener(this);
+		selCountryWin.getPanamaBtn().setActionCommand("PANAMA CRUD");
+
+		selCountryWin.getUruguayBtn().addActionListener(this);
+		selCountryWin.getUruguayBtn().setActionCommand("URUGUAY CRUD");
+
+		selCountryWin.getJamaicaBtn().addActionListener(this);
+		selCountryWin.getJamaicaBtn().setActionCommand("JAMAICA CRUD");
+
+		selCountryWin.getTrinTobaBtn().addActionListener(this);
+		selCountryWin.getTrinTobaBtn().setActionCommand("TRINIDAD Y TOBAGO CRUD");
+
+		selCountryWin.getHaitiBtn().addActionListener(this);
+		selCountryWin.getHaitiBtn().setActionCommand("HAITI CRUD");
+
+		selCountryWin.getGuyanaBtn().addActionListener(this);
+		selCountryWin.getGuyanaBtn().setActionCommand("GUYANA CRUD");
+
+		selCountryWin.getBeliceBtn().addActionListener(this);
+		selCountryWin.getBeliceBtn().setActionCommand("BELICE CRUD");
 
 		colCrudWin.getExit().addActionListener(this);
 		colCrudWin.getExit().setActionCommand("EXIT");
@@ -148,6 +280,402 @@ public class Controller implements ActionListener {
 
 		mexCrudWin.getFilter().addActionListener(this);
 		mexCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE MEXICO");
+
+		argCrudWin.getExit().addActionListener(this);
+		argCrudWin.getExit().setActionCommand("EXIT");
+
+		argCrudWin.getBack().addActionListener(this);
+		argCrudWin.getBack().setActionCommand("BACK CRUD ARGENTINA");
+
+		argCrudWin.getCreate().addActionListener(this);
+		argCrudWin.getCreate().setActionCommand("CREATE ARG");
+
+		argCrudWin.getDelete().addActionListener(this);
+		argCrudWin.getDelete().setActionCommand("DELETE ARG");
+
+		argCrudWin.getUpdate().addActionListener(this);
+		argCrudWin.getUpdate().setActionCommand("SELECT UPDATE ARG");
+
+		argCrudWin.getFilter().addActionListener(this);
+		argCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE ARG");
+
+		vnzlaCrudWin.getExit().addActionListener(this);
+		vnzlaCrudWin.getExit().setActionCommand("EXIT");
+
+		vnzlaCrudWin.getBack().addActionListener(this);
+		vnzlaCrudWin.getBack().setActionCommand("BACK CRUD VENEZUELA");
+
+		vnzlaCrudWin.getCreate().addActionListener(this);
+		vnzlaCrudWin.getCreate().setActionCommand("CREATE VNZLA");
+
+		vnzlaCrudWin.getDelete().addActionListener(this);
+		vnzlaCrudWin.getDelete().setActionCommand("DELETE VNZLA");
+
+		vnzlaCrudWin.getUpdate().addActionListener(this);
+		vnzlaCrudWin.getUpdate().setActionCommand("SELECT UPDATE VNZLA");
+
+		vnzlaCrudWin.getFilter().addActionListener(this);
+		vnzlaCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE VNZLA");
+
+		perCrudWin.getExit().addActionListener(this);
+		perCrudWin.getExit().setActionCommand("EXIT");
+
+		perCrudWin.getBack().addActionListener(this);
+		perCrudWin.getBack().setActionCommand("BACK CRUD PERU");
+
+		perCrudWin.getCreate().addActionListener(this);
+		perCrudWin.getCreate().setActionCommand("CREATE PER");
+
+		perCrudWin.getDelete().addActionListener(this);
+		perCrudWin.getDelete().setActionCommand("DELETE PER");
+
+		perCrudWin.getUpdate().addActionListener(this);
+		perCrudWin.getUpdate().setActionCommand("SELECT UPDATE PER");
+
+		perCrudWin.getFilter().addActionListener(this);
+		perCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE PER");
+
+		chCrudWin.getExit().addActionListener(this);
+		chCrudWin.getExit().setActionCommand("EXIT");
+
+		chCrudWin.getBack().addActionListener(this);
+		chCrudWin.getBack().setActionCommand("BACK CRUD CHILE");
+
+		chCrudWin.getCreate().addActionListener(this);
+		chCrudWin.getCreate().setActionCommand("CREATE CH");
+
+		chCrudWin.getDelete().addActionListener(this);
+		chCrudWin.getDelete().setActionCommand("DELETE CH");
+
+		chCrudWin.getUpdate().addActionListener(this);
+		chCrudWin.getUpdate().setActionCommand("SELECT UPDATE CH");
+
+		chCrudWin.getFilter().addActionListener(this);
+		chCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE CH");
+
+		ecCrudWin.getExit().addActionListener(this);
+		ecCrudWin.getExit().setActionCommand("EXIT");
+
+		ecCrudWin.getBack().addActionListener(this);
+		ecCrudWin.getBack().setActionCommand("BACK CRUD ECUADOR");
+
+		ecCrudWin.getCreate().addActionListener(this);
+		ecCrudWin.getCreate().setActionCommand("CREATE EC");
+
+		ecCrudWin.getDelete().addActionListener(this);
+		ecCrudWin.getDelete().setActionCommand("DELETE EC");
+
+		ecCrudWin.getUpdate().addActionListener(this);
+		ecCrudWin.getUpdate().setActionCommand("SELECT UPDATE EC");
+
+		ecCrudWin.getFilter().addActionListener(this);
+		ecCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE EC");
+
+		guaCrudWin.getExit().addActionListener(this);
+		guaCrudWin.getExit().setActionCommand("EXIT");
+
+		guaCrudWin.getBack().addActionListener(this);
+		guaCrudWin.getBack().setActionCommand("BACK CRUD GUATEMALA");
+
+		guaCrudWin.getCreate().addActionListener(this);
+		guaCrudWin.getCreate().setActionCommand("CREATE GUA");
+
+		guaCrudWin.getDelete().addActionListener(this);
+		guaCrudWin.getDelete().setActionCommand("DELETE GUA");
+
+		guaCrudWin.getUpdate().addActionListener(this);
+		guaCrudWin.getUpdate().setActionCommand("SELECT UPDATE GUA");
+
+		guaCrudWin.getFilter().addActionListener(this);
+		guaCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE GUA");
+
+		cubCrudWin.getExit().addActionListener(this);
+		cubCrudWin.getExit().setActionCommand("EXIT");
+
+		cubCrudWin.getBack().addActionListener(this);
+		cubCrudWin.getBack().setActionCommand("BACK CRUD CUBA");
+
+		cubCrudWin.getCreate().addActionListener(this);
+		cubCrudWin.getCreate().setActionCommand("CREATE CUB");
+
+		cubCrudWin.getDelete().addActionListener(this);
+		cubCrudWin.getDelete().setActionCommand("DELETE CUB");
+
+		cubCrudWin.getUpdate().addActionListener(this);
+		cubCrudWin.getUpdate().setActionCommand("SELECT UPDATE CUB");
+
+		cubCrudWin.getFilter().addActionListener(this);
+		cubCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE CUB");
+
+		bolCrudWin.getExit().addActionListener(this);
+		bolCrudWin.getExit().setActionCommand("EXIT");
+
+		bolCrudWin.getBack().addActionListener(this);
+		bolCrudWin.getBack().setActionCommand("BACK CRUD BOLIVIA");
+
+		bolCrudWin.getCreate().addActionListener(this);
+		bolCrudWin.getCreate().setActionCommand("CREATE BOL");
+
+		bolCrudWin.getDelete().addActionListener(this);
+		bolCrudWin.getDelete().setActionCommand("DELETE BOL");
+
+		bolCrudWin.getUpdate().addActionListener(this);
+		bolCrudWin.getUpdate().setActionCommand("SELECT UPDATE BOL");
+
+		bolCrudWin.getFilter().addActionListener(this);
+		bolCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE BOL");
+
+		rdCrudWin.getExit().addActionListener(this);
+		rdCrudWin.getExit().setActionCommand("EXIT");
+
+		rdCrudWin.getBack().addActionListener(this);
+		rdCrudWin.getBack().setActionCommand("BACK CRUD REPUBLICA DOMINICANA");
+
+		rdCrudWin.getCreate().addActionListener(this);
+		rdCrudWin.getCreate().setActionCommand("CREATE RD");
+
+		rdCrudWin.getDelete().addActionListener(this);
+		rdCrudWin.getDelete().setActionCommand("DELETE RD");
+
+		rdCrudWin.getUpdate().addActionListener(this);
+		rdCrudWin.getUpdate().setActionCommand("SELECT UPDATE RD");
+
+		rdCrudWin.getFilter().addActionListener(this);
+		rdCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE RD");
+
+		honCrudWin.getExit().addActionListener(this);
+		honCrudWin.getExit().setActionCommand("EXIT");
+
+		honCrudWin.getBack().addActionListener(this);
+		honCrudWin.getBack().setActionCommand("BACK CRUD HONDURAS");
+
+		honCrudWin.getCreate().addActionListener(this);
+		honCrudWin.getCreate().setActionCommand("CREATE HON");
+
+		honCrudWin.getDelete().addActionListener(this);
+		honCrudWin.getDelete().setActionCommand("DELETE HON");
+
+		honCrudWin.getUpdate().addActionListener(this);
+		honCrudWin.getUpdate().setActionCommand("SELECT UPDATE HON");
+
+		honCrudWin.getFilter().addActionListener(this);
+		honCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE HON");
+
+		parCrudWin.getExit().addActionListener(this);
+		parCrudWin.getExit().setActionCommand("EXIT");
+
+		parCrudWin.getBack().addActionListener(this);
+		parCrudWin.getBack().setActionCommand("BACK CRUD PARAGUAY");
+
+		parCrudWin.getCreate().addActionListener(this);
+		parCrudWin.getCreate().setActionCommand("CREATE PAR");
+
+		parCrudWin.getDelete().addActionListener(this);
+		parCrudWin.getDelete().setActionCommand("DELETE PAR");
+
+		parCrudWin.getUpdate().addActionListener(this);
+		parCrudWin.getUpdate().setActionCommand("SELECT UPDATE PAR");
+
+		parCrudWin.getFilter().addActionListener(this);
+		parCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE PAR");
+
+		salvCrudWin.getExit().addActionListener(this);
+		salvCrudWin.getExit().setActionCommand("EXIT");
+
+		salvCrudWin.getBack().addActionListener(this);
+		salvCrudWin.getBack().setActionCommand("BACK CRUD EL SALVADOR");
+
+		salvCrudWin.getCreate().addActionListener(this);
+		salvCrudWin.getCreate().setActionCommand("CREATE SALV");
+
+		salvCrudWin.getDelete().addActionListener(this);
+		salvCrudWin.getDelete().setActionCommand("DELETE SALV");
+
+		salvCrudWin.getUpdate().addActionListener(this);
+		salvCrudWin.getUpdate().setActionCommand("SELECT UPDATE SALV");
+
+		salvCrudWin.getFilter().addActionListener(this);
+		salvCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE SALV");
+
+		nicCrudWin.getExit().addActionListener(this);
+		nicCrudWin.getExit().setActionCommand("EXIT");
+
+		nicCrudWin.getBack().addActionListener(this);
+		nicCrudWin.getBack().setActionCommand("BACK CRUD NICARAGUA");
+
+		nicCrudWin.getCreate().addActionListener(this);
+		nicCrudWin.getCreate().setActionCommand("CREATE NIC");
+
+		nicCrudWin.getDelete().addActionListener(this);
+		nicCrudWin.getDelete().setActionCommand("DELETE NIC");
+
+		nicCrudWin.getUpdate().addActionListener(this);
+		nicCrudWin.getUpdate().setActionCommand("SELECT UPDATE NIC");
+
+		nicCrudWin.getFilter().addActionListener(this);
+		nicCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE NIC");
+
+		crCrudWin.getExit().addActionListener(this);
+		crCrudWin.getExit().setActionCommand("EXIT");
+
+		crCrudWin.getBack().addActionListener(this);
+		crCrudWin.getBack().setActionCommand("BACK CRUD COSTA RICA");
+
+		crCrudWin.getCreate().addActionListener(this);
+		crCrudWin.getCreate().setActionCommand("CREATE CR");
+
+		crCrudWin.getDelete().addActionListener(this);
+		crCrudWin.getDelete().setActionCommand("DELETE CR");
+
+		crCrudWin.getUpdate().addActionListener(this);
+		crCrudWin.getUpdate().setActionCommand("SELECT UPDATE CR");
+
+		crCrudWin.getFilter().addActionListener(this);
+		crCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE CR");
+
+		prCrudWin.getExit().addActionListener(this);
+		prCrudWin.getExit().setActionCommand("EXIT");
+
+		prCrudWin.getBack().addActionListener(this);
+		prCrudWin.getBack().setActionCommand("BACK CRUD PUERTO RICO");
+
+		prCrudWin.getCreate().addActionListener(this);
+		prCrudWin.getCreate().setActionCommand("CREATE PR");
+
+		prCrudWin.getDelete().addActionListener(this);
+		prCrudWin.getDelete().setActionCommand("DELETE PR");
+
+		prCrudWin.getUpdate().addActionListener(this);
+		prCrudWin.getUpdate().setActionCommand("SELECT UPDATE PR");
+
+		prCrudWin.getFilter().addActionListener(this);
+		prCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE PR");
+
+		panCrudWin.getExit().addActionListener(this);
+		panCrudWin.getExit().setActionCommand("EXIT");
+
+		panCrudWin.getBack().addActionListener(this);
+		panCrudWin.getBack().setActionCommand("BACK CRUD PANAMA");
+
+		panCrudWin.getCreate().addActionListener(this);
+		panCrudWin.getCreate().setActionCommand("CREATE PAN");
+
+		panCrudWin.getDelete().addActionListener(this);
+		panCrudWin.getDelete().setActionCommand("DELETE PAN");
+
+		panCrudWin.getUpdate().addActionListener(this);
+		panCrudWin.getUpdate().setActionCommand("SELECT UPDATE PAN");
+
+		panCrudWin.getFilter().addActionListener(this);
+		panCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE PAN");
+
+		uruCrudWin.getExit().addActionListener(this);
+		uruCrudWin.getExit().setActionCommand("EXIT");
+
+		uruCrudWin.getBack().addActionListener(this);
+		uruCrudWin.getBack().setActionCommand("BACK CRUD URUGUAY");
+
+		uruCrudWin.getCreate().addActionListener(this);
+		uruCrudWin.getCreate().setActionCommand("CREATE URU");
+
+		uruCrudWin.getDelete().addActionListener(this);
+		uruCrudWin.getDelete().setActionCommand("DELETE URU");
+
+		uruCrudWin.getUpdate().addActionListener(this);
+		uruCrudWin.getUpdate().setActionCommand("SELECT UPDATE URU");
+
+		uruCrudWin.getFilter().addActionListener(this);
+		uruCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE URU");
+
+		jamCrudWin.getExit().addActionListener(this);
+		jamCrudWin.getExit().setActionCommand("EXIT");
+
+		jamCrudWin.getBack().addActionListener(this);
+		jamCrudWin.getBack().setActionCommand("BACK CRUD JAMAICA");
+
+		jamCrudWin.getCreate().addActionListener(this);
+		jamCrudWin.getCreate().setActionCommand("CREATE JAM");
+
+		jamCrudWin.getDelete().addActionListener(this);
+		jamCrudWin.getDelete().setActionCommand("DELETE JAM");
+
+		jamCrudWin.getUpdate().addActionListener(this);
+		jamCrudWin.getUpdate().setActionCommand("SELECT UPDATE JAM");
+
+		jamCrudWin.getFilter().addActionListener(this);
+		jamCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE JAM");
+
+		triniTobCrudWin.getExit().addActionListener(this);
+		triniTobCrudWin.getExit().setActionCommand("EXIT");
+
+		triniTobCrudWin.getBack().addActionListener(this);
+		triniTobCrudWin.getBack().setActionCommand("BACK CRUD TRINIDAD Y TOBAGO");
+
+		triniTobCrudWin.getCreate().addActionListener(this);
+		triniTobCrudWin.getCreate().setActionCommand("CREATE TYT");
+
+		triniTobCrudWin.getDelete().addActionListener(this);
+		triniTobCrudWin.getDelete().setActionCommand("DELETE TYT");
+
+		triniTobCrudWin.getUpdate().addActionListener(this);
+		triniTobCrudWin.getUpdate().setActionCommand("SELECT UPDATE TYT");
+
+		triniTobCrudWin.getFilter().addActionListener(this);
+		triniTobCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE TYT");
+
+		haiCrudWin.getExit().addActionListener(this);
+		haiCrudWin.getExit().setActionCommand("EXIT");
+
+		haiCrudWin.getBack().addActionListener(this);
+		haiCrudWin.getBack().setActionCommand("BACK CRUD HAITI");
+
+		haiCrudWin.getCreate().addActionListener(this);
+		haiCrudWin.getCreate().setActionCommand("CREATE HAI");
+
+		haiCrudWin.getDelete().addActionListener(this);
+		haiCrudWin.getDelete().setActionCommand("DELETE HAI");
+
+		haiCrudWin.getUpdate().addActionListener(this);
+		haiCrudWin.getUpdate().setActionCommand("SELECT UPDATE HAI");
+
+		haiCrudWin.getFilter().addActionListener(this);
+		haiCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE HAI");
+
+		guyCrudWin.getExit().addActionListener(this);
+		guyCrudWin.getExit().setActionCommand("EXIT");
+
+		guyCrudWin.getBack().addActionListener(this);
+		guyCrudWin.getBack().setActionCommand("BACK CRUD GUYANA");
+
+		guyCrudWin.getCreate().addActionListener(this);
+		guyCrudWin.getCreate().setActionCommand("CREATE GUY");
+
+		guyCrudWin.getDelete().addActionListener(this);
+		guyCrudWin.getDelete().setActionCommand("DELETE GUY");
+
+		guyCrudWin.getUpdate().addActionListener(this);
+		guyCrudWin.getUpdate().setActionCommand("SELECT UPDATE GUY");
+
+		guyCrudWin.getFilter().addActionListener(this);
+		guyCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE GUY");
+
+		belCrudWin.getExit().addActionListener(this);
+		belCrudWin.getExit().setActionCommand("EXIT");
+
+		belCrudWin.getBack().addActionListener(this);
+		belCrudWin.getBack().setActionCommand("BACK CRUD BELICE");
+
+		belCrudWin.getCreate().addActionListener(this);
+		belCrudWin.getCreate().setActionCommand("CREATE BEL");
+
+		belCrudWin.getDelete().addActionListener(this);
+		belCrudWin.getDelete().setActionCommand("DELETE BEL");
+
+		belCrudWin.getUpdate().addActionListener(this);
+		belCrudWin.getUpdate().setActionCommand("SELECT UPDATE BEL");
+
+		belCrudWin.getFilter().addActionListener(this);
+		belCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE BEL");
 
 		createWin.getExit().addActionListener(this);
 		createWin.getExit().setActionCommand("EXIT");
