@@ -17,6 +17,7 @@ import co.edu.unbosque.view.MainWindow;
 import co.edu.unbosque.view.SelPackageDeleteWindow;
 import co.edu.unbosque.view.SelectCountryWindow;
 import co.edu.unbosque.view.SelectPackageUpdateWindow;
+import co.edu.unbosque.view.UpdateWindow;
 
 public class Controller implements ActionListener {
 
@@ -30,6 +31,7 @@ public class Controller implements ActionListener {
 	private CreateWindow createWin;
 	private SelPackageDeleteWindow deleteWin;
 	private SelectPackageUpdateWindow selPackUpdateWin;
+	private UpdateWindow updateWin;
 
 	private String countryActual;
 	private String currencyActual;
@@ -46,6 +48,7 @@ public class Controller implements ActionListener {
 		createWin = new CreateWindow();
 		deleteWin = new SelPackageDeleteWindow();
 		selPackUpdateWin = new SelectPackageUpdateWindow();
+		updateWin = new UpdateWindow();
 
 		addReaders();
 	}
@@ -112,8 +115,17 @@ public class Controller implements ActionListener {
 		selPackUpdateWin.getBack().addActionListener(this);
 		selPackUpdateWin.getBack().setActionCommand("BACK SELECT UPDATE");
 
-		selPackUpdateWin.getSelect().addActionListener(this);
-		selPackUpdateWin.getSelect().setActionCommand("SELECT PACKAGE UPDATE");
+		selPackUpdateWin.getUpdate().addActionListener(this);
+		selPackUpdateWin.getUpdate().setActionCommand("SELECT UPDATE");
+
+		updateWin.getExit().addActionListener(this);
+		updateWin.getExit().setActionCommand("EXIT");
+
+		updateWin.getBack().addActionListener(this);
+		updateWin.getBack().setActionCommand("BACK UPDATE");
+
+		updateWin.getUpdate().addActionListener(this);
+		updateWin.getUpdate().setActionCommand("UPDATE PACKAGE");
 
 	}
 
@@ -167,6 +179,11 @@ public class Controller implements ActionListener {
 		}
 		case "BACK CREATE": {
 			backCreate();
+			createWin.getSerialNumber().setText("");
+			createWin.getPackageContent().setText("");
+			createWin.getTransmitterName().setText("");
+			createWin.getReceiverName().setText("");
+			createWin.getWeight().setText("");
 			break;
 		}
 		case "BACK DELETE SELECT": {
@@ -202,15 +219,32 @@ public class Controller implements ActionListener {
 		}
 		case "SELECT UPDATE COL": {
 
+			fillBoxSelectUpdatePackage(0);
 			selPackUpdateWin.setVisible(true);
 			colCrudWin.setVisible(false);
-			fillBoxSelectUpdatePackage(0);
 			break;
 
 		}
-		case "SELECT PACKAGE UPDATE": {
+		case "SELECT UPDATE": {
 
+			selPackUpdateWin.setVisible(false);
+			updateWin.setVisible(true);
+			setDataToUpdate(0);
 			break;
+		}
+		case "BACK UPDATE": {
+
+			selPackUpdateWin.setVisible(true);
+			updateWin.setVisible(false);
+			break;
+		}
+		case "UPDATE PACKAGE": {
+
+			updatePackage();
+			selPackUpdateWin.setVisible(true);
+			updateWin.setVisible(false);
+			break;
+
 		}
 		default:
 			break;
@@ -245,6 +279,26 @@ public class Controller implements ActionListener {
 
 		JOptionPane.showMessageDialog(mainWin, "ELIMINADO CON EXITO");
 
+	}
+
+	public void updatePackage() {
+
+		long serialNumber = Long.parseLong(updateWin.getSerialNumber().getText());
+		String packageContent = updateWin.getPackageContent().getText();
+		String transmitterName = updateWin.getTransmitterName().getText();
+		String receiverName = updateWin.getReceiverName().getText();
+		float weight = Float.parseFloat(updateWin.getWeight().getText());
+
+		packDAO.updateByIndex(
+				packDAO.getIndexBySerialNumber(0,
+						Long.parseLong(selPackUpdateWin.getSelect().getSelectedItem().toString())),
+				Long.toString(serialNumber), packageContent, transmitterName, receiverName, Float.toString(weight));
+
+		JOptionPane.showMessageDialog(mainWin, "ACTUALIZADO CON EXITO");
+		System.out.println(packDAO.read());
+
+		System.out.println("-------------");
+		System.out.println(branDAO.read());
 	}
 
 	public boolean exitConfirm() {
@@ -779,4 +833,26 @@ public class Controller implements ActionListener {
 		}
 
 	}
+
+	public void setDataToUpdate(int cont) {
+
+		updateWin.getSerialNumber().setText(selPackUpdateWin.getSelect().getSelectedItem().toString());
+
+		if (cont < packDAO.getPackageList().size()) {
+
+			updateWin.getPackageContent().setText(packDAO.getPackageList().get(cont).getInfo().getPackageContent());
+			updateWin.getTransmitterName().setText(packDAO.getPackageList().get(cont).getInfo().getTransmitterName());
+			updateWin.getReceiverName().setText(packDAO.getPackageList().get(cont).getInfo().getReceiverName());
+			updateWin.getWeight().setText(Float.toString(packDAO.getPackageList().get(cont).getInfo().getWeight()));
+
+			setDataToUpdate(cont + 1);
+
+		}
+		if (cont >= packDAO.getPackageList().size()) {
+
+			return;
+		}
+
+	}
+
 }

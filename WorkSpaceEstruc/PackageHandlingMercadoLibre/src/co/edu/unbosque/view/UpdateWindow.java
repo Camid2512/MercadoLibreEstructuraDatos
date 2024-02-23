@@ -20,7 +20,7 @@ public class UpdateWindow extends JFrame {
 
 	private JLabel mainImage;
 	private JTextField serialNumber, packageContent, transmitterName, receiverName, weight;
-	private JButton create, exit, back;
+	private JButton update, exit, back;
 
 	public UpdateWindow() {
 		// TODO Auto-generated constructor stub
@@ -100,20 +100,20 @@ public class UpdateWindow extends JFrame {
 		weight.setForeground(Color.white);
 		add(weight);
 
-		create = new JButton();
-		create.setBounds(384, 654, 201, 61);
-		create.setToolTipText("CREAR PAQUETE NUEVO");
-		create.setBackground(new Color(0, 0, 0, 0));
-		create.setOpaque(false);
-		create.setContentAreaFilled(false);
-		create.setBorderPainted(false);
-		add(create);
+		update = new JButton();
+		update.setBounds(384, 654, 201, 61);
+		update.setToolTipText("CREAR PAQUETE NUEVO");
+		update.setBackground(new Color(0, 0, 0, 0));
+		update.setOpaque(false);
+		update.setContentAreaFilled(false);
+		update.setBorderPainted(false);
+		add(update);
 
 		mainImage = new JLabel();
 		mainImage.setBounds(0, 0, 1280, 720);
 
 		Image temporal1;
-		temporal1 = new ImageIcon("src/Images/crear.png").getImage();
+		temporal1 = new ImageIcon("src/Images/actualizar.png").getImage();
 
 		ImageIcon img1;
 		img1 = new ImageIcon(
@@ -173,16 +173,12 @@ public class UpdateWindow extends JFrame {
 		this.weight = weight;
 	}
 
-	public JButton getCreate() {
-		return create;
+	public JButton getUpdate() {
+		return update;
 	}
 
-	public void setCreate(JButton create) {
-		this.create = create;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setUpdate(JButton update) {
+		this.update = update;
 	}
 
 	public JButton getExit() {
@@ -199,6 +195,10 @@ public class UpdateWindow extends JFrame {
 
 	public void setBack(JButton back) {
 		this.back = back;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

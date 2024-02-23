@@ -6,11 +6,13 @@ import co.edu.unbosque.util.linkedlist.MyLinkedList;
 public class PackageDAO implements CRUDOperation {
 
 	private MyLinkedList<PackageDTO> packageList;
+	private String print;
 
 	public PackageDAO() {
 		// TODO Auto-generated constructor stub
 
 		packageList = new MyLinkedList<>();
+		print = "";
 
 	}
 
@@ -86,6 +88,96 @@ public class PackageDAO implements CRUDOperation {
 			getIndexBySerialNumber(cont, serial);
 		}
 		return index;
+
+	}
+
+	public String searchBySerialNumber(int index, Long serialNumber) {
+
+		if (packageList.get(index).getInfo().getSerialNumber() == serialNumber) {
+			print = packageList.get(index).getInfo().toString();
+			return print;
+		}
+		if (packageList.get(index).getNext() != null) {
+
+			searchBySerialNumber(index + 1, serialNumber);
+
+		} else {
+			searchBySerialNumber(index + 1, serialNumber);
+
+		}
+		return print;
+
+	}
+
+	public String searchByPackageContent(int index, String packageContent) {
+
+		if (packageList.get(index).getInfo().getPackageContent().equalsIgnoreCase(packageContent)) {
+			print = packageList.get(index).getInfo().toString();
+			return print;
+		}
+		if (packageList.get(index).getNext() != null) {
+
+			searchByPackageContent(index + 1, packageContent);
+
+		} else {
+			searchByPackageContent(index + 1, packageContent);
+
+		}
+		return print;
+
+	}
+
+	public String searchByTransmitterName(int index, String transmitterName) {
+
+		if (packageList.get(index).getInfo().getTransmitterName().equalsIgnoreCase(transmitterName)) {
+			print = packageList.get(index).getInfo().toString();
+			return print;
+		}
+		if (packageList.get(index).getNext() != null) {
+
+			searchByTransmitterName(index + 1, transmitterName);
+
+		} else {
+			searchByTransmitterName(index + 1, transmitterName);
+
+		}
+		return print;
+
+	}
+
+	public String searchByRecieverName(int index, String recieverName) {
+
+		if (packageList.get(index).getInfo().getReceiverName().equalsIgnoreCase(recieverName)) {
+			print = packageList.get(index).getInfo().toString();
+			return print;
+		}
+		if (packageList.get(index).getNext() != null) {
+
+			searchByRecieverName(index + 1, recieverName);
+
+		} else {
+			searchByRecieverName(index + 1, recieverName);
+
+		}
+		return print;
+
+	}
+
+	public String searchByWeight(int index, Float weight) {
+
+		if (packageList.get(index).getInfo().getWeight() == weight) {
+			print = packageList.get(index).getInfo().toString();
+			return print;
+		}
+		if (packageList.get(index).getNext() != null) {
+
+			searchByWeight(index + 1, weight);
+
+		} else {
+			searchByWeight(index + 1, weight);
+
+		}
+		return print;
 
 	}
 

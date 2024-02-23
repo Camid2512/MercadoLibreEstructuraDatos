@@ -18,7 +18,7 @@ public class SelectPackageUpdateWindow extends JFrame {
 	private static final long serialVersionUID = 7317239409320683290L;
 
 	private JLabel mainImage;
-	private JButton exit, back, delete;
+	private JButton exit, back, update;
 	private JComboBox<Long> select;
 
 	public SelectPackageUpdateWindow() {
@@ -56,14 +56,14 @@ public class SelectPackageUpdateWindow extends JFrame {
 		select.setFont(new Font("Arial", 1, 25));
 		add(select);
 
-		delete = new JButton();
-		delete.setBounds(521, 459, 238, 55);
-		delete.setToolTipText("ACTUALIZAR");
-		delete.setBackground(new Color(0, 0, 0, 0));
-		delete.setOpaque(false);
-		delete.setContentAreaFilled(false);
-		delete.setBorderPainted(false);
-		add(delete);
+		update = new JButton();
+		update.setBounds(521, 459, 238, 55);
+		update.setToolTipText("ACTUALIZAR");
+		update.setBackground(new Color(0, 0, 0, 0));
+		update.setOpaque(false);
+		update.setContentAreaFilled(false);
+		update.setBorderPainted(false);
+		add(update);
 
 		mainImage = new JLabel();
 		mainImage.setBounds(0, 0, 1280, 720);
@@ -104,12 +104,12 @@ public class SelectPackageUpdateWindow extends JFrame {
 		this.back = back;
 	}
 
-	public JButton getDelete() {
-		return delete;
+	public JButton getUpdate() {
+		return update;
 	}
 
-	public void setDelete(JButton delete) {
-		this.delete = delete;
+	public void setUpdate(JButton update) {
+		this.update = update;
 	}
 
 	public JComboBox<Long> getSelect() {
