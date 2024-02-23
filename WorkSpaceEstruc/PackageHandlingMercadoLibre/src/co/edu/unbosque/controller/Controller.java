@@ -14,10 +14,12 @@ import co.edu.unbosque.view.ColombiaCRUDWindow;
 import co.edu.unbosque.view.CreateWindow;
 import co.edu.unbosque.view.FilterWindow;
 import co.edu.unbosque.view.MainWindow;
+import co.edu.unbosque.view.MexicoCRUDWindow;
 import co.edu.unbosque.view.SelPackageDeleteWindow;
 import co.edu.unbosque.view.SelectCountryWindow;
 import co.edu.unbosque.view.SelectFilterTypeWindow;
 import co.edu.unbosque.view.SelectPackageUpdateWindow;
+import co.edu.unbosque.view.SurinamCRUDWindow;
 import co.edu.unbosque.view.UpdateWindow;
 
 public class Controller implements ActionListener {
@@ -26,9 +28,12 @@ public class Controller implements ActionListener {
 	private BranchDAO branDAO;
 	private CountryDAO counDAO;
 
+	private ColombiaCRUDWindow colCrudWin;
+	private SurinamCRUDWindow surinamCrudWin;
+	private MexicoCRUDWindow mexCrudWin;
+
 	private MainWindow mainWin;
 	private SelectCountryWindow selCountryWin;
-	private ColombiaCRUDWindow colCrudWin;
 	private CreateWindow createWin;
 	private SelPackageDeleteWindow deleteWin;
 	private SelectPackageUpdateWindow selPackUpdateWin;
@@ -45,9 +50,12 @@ public class Controller implements ActionListener {
 		branDAO = new BranchDAO();
 		counDAO = new CountryDAO();
 
+		colCrudWin = new ColombiaCRUDWindow();
+		surinamCrudWin = new SurinamCRUDWindow();
+		mexCrudWin = new MexicoCRUDWindow();
+
 		mainWin = new MainWindow();
 		selCountryWin = new SelectCountryWindow();
-		colCrudWin = new ColombiaCRUDWindow();
 		createWin = new CreateWindow();
 		deleteWin = new SelPackageDeleteWindow();
 		selPackUpdateWin = new SelectPackageUpdateWindow();
@@ -81,6 +89,12 @@ public class Controller implements ActionListener {
 		selCountryWin.getColBtn().addActionListener(this);
 		selCountryWin.getColBtn().setActionCommand("COLOMBIA CRUD");
 
+		selCountryWin.getSurinamBtn().addActionListener(this);
+		selCountryWin.getSurinamBtn().setActionCommand("SURINAM CRUD");
+
+		selCountryWin.getMexicoBtn().addActionListener(this);
+		selCountryWin.getMexicoBtn().setActionCommand("MEXICO CRUD");
+
 		colCrudWin.getExit().addActionListener(this);
 		colCrudWin.getExit().setActionCommand("EXIT");
 
@@ -97,7 +111,43 @@ public class Controller implements ActionListener {
 		colCrudWin.getUpdate().setActionCommand("SELECT UPDATE COL");
 
 		colCrudWin.getFilter().addActionListener(this);
-		colCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE");
+		colCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE COL");
+
+		surinamCrudWin.getExit().addActionListener(this);
+		surinamCrudWin.getExit().setActionCommand("EXIT");
+
+		surinamCrudWin.getBack().addActionListener(this);
+		surinamCrudWin.getBack().setActionCommand("BACK CRUD SURINAM");
+
+		surinamCrudWin.getCreate().addActionListener(this);
+		surinamCrudWin.getCreate().setActionCommand("CREATE SURINAM");
+
+		surinamCrudWin.getDelete().addActionListener(this);
+		surinamCrudWin.getDelete().setActionCommand("DELETE SURINAM");
+
+		surinamCrudWin.getUpdate().addActionListener(this);
+		surinamCrudWin.getUpdate().setActionCommand("SELECT UPDATE SURINAM");
+
+		surinamCrudWin.getFilter().addActionListener(this);
+		surinamCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE SURINAM");
+
+		mexCrudWin.getExit().addActionListener(this);
+		mexCrudWin.getExit().setActionCommand("EXIT");
+
+		mexCrudWin.getBack().addActionListener(this);
+		mexCrudWin.getBack().setActionCommand("BACK CRUD MEXICO");
+
+		mexCrudWin.getCreate().addActionListener(this);
+		mexCrudWin.getCreate().setActionCommand("CREATE MEXICO");
+
+		mexCrudWin.getDelete().addActionListener(this);
+		mexCrudWin.getDelete().setActionCommand("DELETE MEXICO");
+
+		mexCrudWin.getUpdate().addActionListener(this);
+		mexCrudWin.getUpdate().setActionCommand("SELECT UPDATE MEXICO");
+
+		mexCrudWin.getFilter().addActionListener(this);
+		mexCrudWin.getFilter().setActionCommand("SELECT FILTER TYPE MEXICO");
 
 		createWin.getExit().addActionListener(this);
 		createWin.getExit().setActionCommand("EXIT");
@@ -203,13 +253,110 @@ public class Controller implements ActionListener {
 			colCrudWin.setVisible(false);
 			break;
 		}
-		case "BACK CREATE": {
-			backCreate();
-			createWin.getSerialNumber().setText("");
-			createWin.getPackageContent().setText("");
-			createWin.getTransmitterName().setText("");
-			createWin.getReceiverName().setText("");
-			createWin.getWeight().setText("");
+		case "DELETE COL": {
+
+			deleteWin.setVisible(true);
+			colCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE COL": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			colCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE COL": {
+
+			selFilterTypeWin.setVisible(true);
+			colCrudWin.setVisible(false);
+			break;
+		}
+		case "SURINAM CRUD": {
+			countryActual = "SURINAM";
+			currencyActual = "SRD";
+			surinamCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD SURINAM": {
+
+			selCountryWin.setVisible(true);
+			surinamCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE SURINAM": {
+
+			createWin.setVisible(true);
+			surinamCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE SURINAM": {
+
+			deleteWin.setVisible(true);
+			surinamCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE SURINAM": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			surinamCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE SURINAM": {
+
+			selFilterTypeWin.setVisible(true);
+			surinamCrudWin.setVisible(false);
+			break;
+		}
+		case "MEXICO CRUD": {
+			countryActual = "MEXICO";
+			currencyActual = "MXV";
+			mexCrudWin.setVisible(true);
+			selCountryWin.setVisible(false);
+			break;
+		}
+		case "BACK CRUD MEXICO": {
+
+			selCountryWin.setVisible(true);
+			mexCrudWin.setVisible(false);
+			break;
+
+		}
+		case "CREATE MEXICO": {
+
+			createWin.setVisible(true);
+			mexCrudWin.setVisible(false);
+			break;
+		}
+		case "DELETE MEXICO": {
+
+			deleteWin.setVisible(true);
+			mexCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
+			break;
+
+		}
+		case "SELECT UPDATE MEXICO": {
+
+			fillBoxSelectUpdatePackage(0);
+			selPackUpdateWin.setVisible(true);
+			mexCrudWin.setVisible(false);
+			break;
+
+		}
+		case "SELECT FILTER TYPE MEXICO": {
+
+			selFilterTypeWin.setVisible(true);
+			mexCrudWin.setVisible(false);
 			break;
 		}
 		case "BACK DELETE SELECT": {
@@ -229,27 +376,20 @@ public class Controller implements ActionListener {
 			createWin.getWeight().setText("");
 			break;
 		}
-
-		case "DELETE COL": {
-
-			deleteWin.setVisible(true);
-			colCrudWin.setVisible(false);
-			fillBoxSelectDeletePackage(0);
+		case "BACK CREATE": {
+			backCreate();
+			createWin.getSerialNumber().setText("");
+			createWin.getPackageContent().setText("");
+			createWin.getTransmitterName().setText("");
+			createWin.getReceiverName().setText("");
+			createWin.getWeight().setText("");
 			break;
-
 		}
+
 		case "DELETE PACKAGE": {
 			deletePackage();
 			backDelete();
 			break;
-		}
-		case "SELECT UPDATE COL": {
-
-			fillBoxSelectUpdatePackage(0);
-			selPackUpdateWin.setVisible(true);
-			colCrudWin.setVisible(false);
-			break;
-
 		}
 		case "SELECT UPDATE": {
 
@@ -271,12 +411,6 @@ public class Controller implements ActionListener {
 			updateWin.setVisible(false);
 			break;
 
-		}
-		case "SELECT FILTER TYPE": {
-
-			selFilterTypeWin.setVisible(true);
-			colCrudWin.setVisible(false);
-			break;
 		}
 		case "BACK SELECT TYPE FILTER": {
 			backSelFilter();
@@ -445,7 +579,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
-			colCrudWin.setVisible(true);
+			mexCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 		}
@@ -595,7 +729,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
-			colCrudWin.setVisible(true);
+			surinamCrudWin.setVisible(true);
 			deleteWin.setVisible(false);
 			updateBoxSelectDeletePackage();
 
@@ -618,7 +752,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
-			colCrudWin.setVisible(true);
+			mexCrudWin.setVisible(true);
 			createWin.setVisible(false);
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
@@ -746,7 +880,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
-			colCrudWin.setVisible(true);
+			surinamCrudWin.setVisible(true);
 			createWin.setVisible(false);
 
 		}
@@ -768,7 +902,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
-			colCrudWin.setVisible(true);
+			mexCrudWin.setVisible(true);
 			selPackUpdateWin.setVisible(false);
 			updateBoxSelectUpdatePackage();
 		}
@@ -901,7 +1035,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
-			colCrudWin.setVisible(true);
+			surinamCrudWin.setVisible(true);
 			selPackUpdateWin.setVisible(false);
 			updateBoxSelectUpdatePackage();
 		}
@@ -923,7 +1057,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("MEXICO") && currencyActual.equals("MXV")) {
 
-			colCrudWin.setVisible(true);
+			mexCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
 		}
 		if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
@@ -1034,7 +1168,7 @@ public class Controller implements ActionListener {
 		}
 		if (countryActual.equals("SURINAM") && currencyActual.equals("SRD")) {
 
-			colCrudWin.setVisible(true);
+			surinamCrudWin.setVisible(true);
 			selFilterTypeWin.setVisible(false);
 		}
 		if (countryActual.equals("BELICE") && currencyActual.equals("BZD")) {
