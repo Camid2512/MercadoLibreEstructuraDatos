@@ -20,7 +20,7 @@ public class CreateWindow extends JFrame {
 
 	private JLabel mainImage;
 	private JTextField serialNumber, packageContent, transmitterName, receiverName, weight;
-	private JButton create, exit;
+	private JButton create, exit, back;
 
 	public CreateWindow() {
 		// TODO Auto-generated constructor stub
@@ -40,6 +40,15 @@ public class CreateWindow extends JFrame {
 		exit.setContentAreaFilled(false);
 		exit.setBorderPainted(false);
 		add(exit);
+
+		back = new JButton();
+		back.setBounds(46, 670, 70, 32);
+		back.setToolTipText("ATRAS");
+		back.setBackground(new Color(0, 0, 0, 0));
+		back.setOpaque(false);
+		back.setContentAreaFilled(false);
+		back.setBorderPainted(false);
+		add(back);
 
 		serialNumber = new JTextField();
 		serialNumber.setBounds(599, 197, 633, 47);
@@ -174,6 +183,22 @@ public class CreateWindow extends JFrame {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public JButton getExit() {
+		return exit;
+	}
+
+	public void setExit(JButton exit) {
+		this.exit = exit;
+	}
+
+	public JButton getBack() {
+		return back;
+	}
+
+	public void setBack(JButton back) {
+		this.back = back;
 	}
 
 }

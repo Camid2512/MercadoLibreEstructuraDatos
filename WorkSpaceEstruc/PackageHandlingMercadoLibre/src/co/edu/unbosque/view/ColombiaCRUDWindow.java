@@ -16,7 +16,7 @@ public class ColombiaCRUDWindow extends JFrame {
 	private static final long serialVersionUID = -2771132745796486433L;
 
 	private JLabel mainImage;
-	private JButton create, read, update, delete, filter, exit;
+	private JButton create, read, update, delete, filter, exit, back;
 
 	public ColombiaCRUDWindow() {
 		// TODO Auto-generated constructor stub
@@ -36,6 +36,15 @@ public class ColombiaCRUDWindow extends JFrame {
 		exit.setContentAreaFilled(false);
 		exit.setBorderPainted(false);
 		add(exit);
+
+		back = new JButton();
+		back.setBounds(46, 670, 70, 32);
+		back.setToolTipText("ATRAS");
+		back.setBackground(new Color(0, 0, 0, 0));
+		back.setOpaque(false);
+		back.setContentAreaFilled(false);
+		back.setBorderPainted(false);
+		add(back);
 
 		create = new JButton();
 		create.setBounds(641, 176, 585, 72);
@@ -148,6 +157,22 @@ public class ColombiaCRUDWindow extends JFrame {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public JButton getExit() {
+		return exit;
+	}
+
+	public void setExit(JButton exit) {
+		this.exit = exit;
+	}
+
+	public JButton getBack() {
+		return back;
+	}
+
+	public void setBack(JButton back) {
+		this.back = back;
 	}
 
 }

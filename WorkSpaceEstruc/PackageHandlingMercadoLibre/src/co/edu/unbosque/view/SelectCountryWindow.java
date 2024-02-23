@@ -18,7 +18,7 @@ public class SelectCountryWindow extends JFrame {
 	private JLabel mainImage;
 	private JButton surinamBtn, argentinBtn, venezuelBtn, peruBtn, chileBtn, mexicoBtn, ecuadorBtn, guatBtn, colBtn,
 			cubaBtn, bolBtn, repDomBtn, honduBtn, paraguayBtn, salvadorBtn, nicaraguaBtn, costRicaBtn, puertRicoBtn,
-			panamaBtn, uruguayBtn, jamaicaBtn, trinTobaBtn, haitiBtn, guyanaBtn, beliceBtn, exit;
+			panamaBtn, uruguayBtn, jamaicaBtn, trinTobaBtn, haitiBtn, guyanaBtn, beliceBtn, exit, back;
 
 	public SelectCountryWindow() {
 		// TODO Auto-generated constructor stub
@@ -39,6 +39,15 @@ public class SelectCountryWindow extends JFrame {
 		exit.setContentAreaFilled(false);
 		exit.setBorderPainted(false);
 		add(exit);
+
+		back = new JButton();
+		back.setBounds(46, 670, 70, 32);
+		back.setToolTipText("ATRAS");
+		back.setBackground(new Color(0, 0, 0, 0));
+		back.setOpaque(false);
+		back.setContentAreaFilled(false);
+		back.setBorderPainted(false);
+		add(back);
 
 		surinamBtn = new JButton();
 		surinamBtn.setBounds(22, 234, 123, 123);
@@ -492,6 +501,22 @@ public class SelectCountryWindow extends JFrame {
 
 	public void setBeliceBtn(JButton beliceBtn) {
 		this.beliceBtn = beliceBtn;
+	}
+
+	public JButton getExit() {
+		return exit;
+	}
+
+	public void setExit(JButton exit) {
+		this.exit = exit;
+	}
+
+	public JButton getBack() {
+		return back;
+	}
+
+	public void setBack(JButton back) {
+		this.back = back;
 	}
 
 }
