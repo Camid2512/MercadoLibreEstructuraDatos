@@ -67,6 +67,10 @@ public class PackageDAO implements CRUDOperation {
 		}
 	}
 
+	public int getIndexBySerialNumber(Long serial) {
+
+	}
+
 	public MyLinkedList<PackageDTO> getPackageList() {
 		return packageList;
 	}

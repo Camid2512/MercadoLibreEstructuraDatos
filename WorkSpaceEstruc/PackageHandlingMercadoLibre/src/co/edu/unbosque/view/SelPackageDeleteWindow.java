@@ -1,10 +1,12 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -17,6 +19,7 @@ public class SelPackageDeleteWindow extends JFrame {
 
 	private JLabel mainImage;
 	private JButton exit, back, delete;
+	private JComboBox<Long> select;
 
 	public SelPackageDeleteWindow() {
 		// TODO Auto-generated constructor stub
@@ -45,6 +48,22 @@ public class SelPackageDeleteWindow extends JFrame {
 		back.setContentAreaFilled(false);
 		back.setBorderPainted(false);
 		add(back);
+
+		select = new JComboBox<>();
+		select.setBounds(320, 376, 633, 46);
+		select.setBackground(new Color(225, 223, 228));
+		select.setForeground(Color.black);
+		select.setFont(new Font("Arial", 1, 25));
+		add(select);
+
+		delete = new JButton();
+		delete.setBounds(521, 459, 238, 55);
+		delete.setToolTipText("ELIMINAR");
+		delete.setBackground(new Color(0, 0, 0, 0));
+		delete.setOpaque(false);
+		delete.setContentAreaFilled(false);
+		delete.setBorderPainted(false);
+		add(delete);
 
 		mainImage = new JLabel();
 		mainImage.setBounds(0, 0, 1280, 720);
@@ -96,6 +115,14 @@ public class SelPackageDeleteWindow extends JFrame {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public JComboBox<Long> getSelect() {
+		return select;
+	}
+
+	public void setSelect(JComboBox<Long> select) {
+		this.select = select;
 	}
 
 }

@@ -95,7 +95,7 @@ public class Controller implements ActionListener {
 		deleteWin.getExit().setActionCommand("EXIT");
 
 		deleteWin.getBack().addActionListener(this);
-		deleteWin.getBack().setActionCommand("BACK DELETE");
+		deleteWin.getBack().setActionCommand("BACK DELETE SELECT");
 
 		deleteWin.getDelete().addActionListener(this);
 		deleteWin.getDelete().setActionCommand("DELETE PACKAGE");
@@ -325,11 +325,12 @@ public class Controller implements ActionListener {
 			}
 			break;
 		}
-		case "BACK DELETE": {
+		case "BACK DELETE SELECT": {
 			if (countryActual.equals("COLOMBIA") && currencyActual.equals("COP")) {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -337,12 +338,14 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 			}
 			if (countryActual.equals("ARGENTINA") && currencyActual.equals("ARS")) {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -350,6 +353,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -357,6 +361,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -364,6 +369,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -371,6 +377,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -378,6 +385,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -385,6 +393,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -392,6 +401,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -399,12 +409,14 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 			}
 			if (countryActual.equals("HONDURAS") && currencyActual.equals("HNL")) {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -412,12 +424,14 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 			}
 			if (countryActual.equals("EL SALVADOR") && currencyActual.equals("SVC")) {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -425,6 +439,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -432,6 +447,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -439,6 +455,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -446,6 +463,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -453,6 +471,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -460,6 +479,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -467,6 +487,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -474,6 +495,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -481,6 +503,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -488,6 +511,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -495,6 +519,7 @@ public class Controller implements ActionListener {
 
 				colCrudWin.setVisible(true);
 				deleteWin.setVisible(false);
+				updateBoxSelectDeletePackage();
 				break;
 
 			}
@@ -513,11 +538,13 @@ public class Controller implements ActionListener {
 
 		case "DELETE COL": {
 
-			countryActual = "COLOMBIA";
-			currencyActual = "COLOMBIA";
 			deleteWin.setVisible(true);
 			colCrudWin.setVisible(false);
+			fillBoxSelectDeletePackage(0);
 			break;
+
+		}
+		case "DELETE PACKAGE": {
 
 		}
 
@@ -548,6 +575,10 @@ public class Controller implements ActionListener {
 
 	}
 
+	public void deletePackage() {
+
+	}
+
 	public boolean exitConfirm() {
 
 		int response = JOptionPane.showOptionDialog(mainWin, "¿ESTA SEGURO QUE QUIERE CERRAR EL APLICATIVO?", "¿SALIR?",
@@ -563,4 +594,26 @@ public class Controller implements ActionListener {
 		return confirmation;
 
 	}
+
+	public void fillBoxSelectDeletePackage(int cont) {
+
+		if (cont < packDAO.getPackageList().size()) {
+
+			deleteWin.getSelect().addItem(packDAO.getPackageList().get(cont).getInfo().getSerialNumber());
+			fillBoxSelectDeletePackage(cont + 1);
+		}
+
+		if (cont >= packDAO.getPackageList().size()) {
+			return;
+		}
+	}
+
+	public void updateBoxSelectDeletePackage() {
+
+		if (!packDAO.getPackageList().isEmpty()) {
+			deleteWin.getSelect().removeAllItems();
+		}
+
+	}
+
 }
